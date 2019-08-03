@@ -1,0 +1,143 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FFC 코드 &#8212; binkeul user doc 0.8 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="빈글과 자동인식" href="빈글자동인식.html" />
+    <link rel="prev" title="몇몇 개선사항 (20181221제안)" href="제안사항20181221.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ffc">
+<h1>FFC 코드<a class="headerlink" href="#ffc" title="제목 주소">¶</a></h1>
+<p>FFC(forty five pixel code)는 빈글에서 바이너리를 표현하는 형식이다. 문자열이나 정수값 등의 데이타를 픽셀맵 형식으로 표현한다. 하나의 FFC는 45개의 픽셀로 이루어져 있고 오류 정정이 가능한 32비트(4Byte)의 데이타를 저장한다. 오류 정정을 위해 6개의 해밍코드(Hamming Code) 패리티비트를 사용한다.</p>
+<p>하나의 픽셀에서 오류가 있는 경우 정정 가능하다. 하지만 두 개 이상의 픽셀에 오류가 있으면 정정할 수 없고 픽셀들 중에 오류가 있음을 감지 할 수 있다.</p>
+<img alt="../_images/ffc-pixel.png" src="../_images/ffc-pixel.png" />
+<p>32 비트에 해당하는 픽셀을 제외하면 13개 픽셀이 남는데 이 픽셀들은 패리티비트이거나 전체 FFC 코드의 중심과 크기를 확정하는 기준점으로 기능한다. 중심고정을 위해 사선으로 배치된 3개 픽셀 중 가운데 위치한 픽셀은 흰색이고 나머지는 2개는 검정색이다. 2개의 모서리 픽셀은 가장자리(상하좌우 마지막라인) 위치에 검정 픽셀이 하나 이상 있도록 설정된다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">(</span> <span class="mi">40</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">44</span><span class="p">),</span>
+    <span class="p">(</span> <span class="mi">35</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">38</span><span class="p">,</span><span class="mi">39</span><span class="p">),</span>
+    <span class="p">(</span> <span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+    <span class="p">(</span> <span class="mi">21</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span>
+    <span class="p">(</span> <span class="mi">22</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
+    <span class="p">(</span> <span class="mi">23</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span>
+    <span class="p">(</span> <span class="mi">24</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span><span class="mi">14</span><span class="p">),</span>
+    <span class="p">(</span> <span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">34</span><span class="p">),</span>
+    <span class="p">(</span> <span class="mi">25</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">29</span><span class="p">),</span>
+                        <span class="p">]</span>
+
+<span class="n">해밍코드</span> <span class="n">패리티비트</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span>
+
+<span class="n">중심고정</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="n">오류감지</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">모서리</span> <span class="o">=</span> <span class="p">(</span><span class="mi">29</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>FFC 는 보통 빈글로 나타내기 어려운 데이타를 문장에 포함시켜야 할 때 사용한다. 하나 이상의 FFC를 길이 제한없이 나열할 수 있으므로 긴 문자열, URL, 파일데이타 등도 FFC 로 나타낼수 있다.
+데이타 타입을 지정하기 위해 첫번째 FFC 는 타입정보를 담고 있다.</p>
+<img alt="../_images/ffc-sample.png" src="../_images/ffc-sample.png" />
+<p>FFC 를 문장에 포함시킬 때는 하나의 단어처럼 사용하면 된다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/ffc-01.svg"><img alt="../_images/ffc-01.svg" height="60" src="../_images/ffc-01.svg" /></a>
+<p><cite>당신은 &quot;ABCD-6789.PDF&quot; 파일을 읽었나요?</cite>
+<code class="docutils literal"><span class="pre">yhCUyEEAUHDpxSvsOEAUrKEAVEKzzzFHOQcojqsDgUFvuGgoRjRkqEAZvSVyQEAURLXiWuIWEAVOG</span></code></p>
+</div></blockquote>
+<p>타입정보가 없이 사용되는 경우에 참조어 처럼 사용할 수 있다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/ffc-02.svg"><img alt="../_images/ffc-02.svg" height="60" src="../_images/ffc-02.svg" /></a>
+<p><cite>홍길동은 그의 구름을 부른다.</cite>
+<code class="docutils literal"><span class="pre">qVtQqcUhSVECyCUUrMuOYuZmObWOoIEAtwWEAUHDvMUVFLEAVEKqVtQqcEAvsGvYIogeEAURLEAVOG</span></code></p>
+</div></blockquote>
+<p>&quot;hellow, world&quot; 문자열을 출력하는 실행문을 빈글언어 코드로 표현하면 다음과 같다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/ffc-03.svg"><img alt="../_images/ffc-03.svg" height="60" src="../_images/ffc-03.svg" /></a>
+<p><cite>&quot;hello, world&quot;를 말하다(출력하라)</cite>
+<code class="docutils literal"><span class="pre">pdCuhVEAVEKzzzFDuYiWPmXpeTOZVnaPiEfcEAEAURLEAVOG</span></code></p>
+</div></blockquote>
+<p>출력되는 &quot;hellow, world&quot; 문자열은 FFC 코드로 쓰여진다.</p>
+<blockquote>
+<div><img alt="../_images/ffc-run-helloworld.PNG" src="../_images/ffc-run-helloworld.PNG" />
+<img alt="../_images/ffc-out-helloworld.PNG" src="../_images/ffc-out-helloworld.PNG" />
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="제안사항20181221.html" title="이전 장">몇몇 개선사항 (20181221제안)</a></li>
+      <li>Next: <a href="빈글자동인식.html" title="다음 장">빈글과 자동인식</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="바로 가기" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, budl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/doc/FFC코드.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

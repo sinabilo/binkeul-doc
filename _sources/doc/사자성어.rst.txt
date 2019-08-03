@@ -1,0 +1,48 @@
+.. UjWXSitwvOEntwvOEnUjWXSivaOUvMycGelyAMtMCtwvOFoyAIptavaOUvMOBMVvLycGelZuStXiQVQwFbvaOUvMWUYQOEWUYQOEPYEwFmPYEwFmvaOUvMZnCXgbZnCXgbxOUPsgxOUPsgvaOUvM
+
+
+
+
+빈글 사자성어
+=====================
+빈글의 문장에서 중심되는 단어만 남겨서 매우 함축적인 뜻을 가지는 단어를 만들수 있는데
+이는 한자의 사자성어와 비슷하다.
+
+   .. image:: /_static/사자성어/눈눈이이.svg
+      :height: 60 
+   
+   `눈에는 눈 이에는 이`
+   
+   ``ZnCXgbZnCXgbxOUPsgxOUPsg``
+    
+   .. image:: /_static/사자성어/돼지개.svg
+      :height: 60 
+   
+   `돼지에게는 돼지만 보이고 개에게는 개만 보인다.` 
+   
+   ``WUYQOEWUYQOEPYEwFmPYEwFm``
+
+   .. image:: /_static/사자성어/낮새밤쥐.svg
+      :height: 60 
+   
+   `낮말은 새가 듣고 밤말은 쥐가 듣는다` 
+
+   ``OBMVvLycGelZuStXiQVQwFb``
+
+   .. image:: /_static/사자성어/까마귀배.png
+      :height: 60 
+   
+   `까마귀 날자 배 떨어진다.` 
+
+   ``ycGelyAMtMCtwvOFoyAIpta``
+
+   .. image:: /_static/사자성어/사람돈.png
+      :height: 60 
+   
+   `사람 나고 돈났지 돈 나고 사람났나?` 
+
+   ``UjWXSitwvOEntwvOEnUjWXSi``
+   
+   
+
+   

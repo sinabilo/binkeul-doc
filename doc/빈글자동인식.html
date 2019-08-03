@@ -1,0 +1,119 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>빈글과 자동인식 &#8212; binkeul user doc 0.8 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="빈글과 자동인식 - 2" href="빈글자동인식2.html" />
+    <link rel="prev" title="FFC 코드" href="FFC코드.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>빈글과 자동인식<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<p>최근 인공지능을 사용한 사물인식 기술이 크게 향상되면서 OpenCV 같이 실시간으로 이미지나 영상을 처리하여 시각적 정보를 자동적으로 인식하는 기술이 주목받고 있다. 공간과 사물을 인식하고 추적하며 문자나 마커, 표지판, 바코드와 같은 것을 알아차릴 수 있을 정도로 발전되었고 다양한 분야에서 사람의 일을 대체 하고 있다. 머지않아 인공지능과 컴퓨터는 인간과 유사한 시각적 인지기능을 갖추게 될 것이다.</p>
+<p>빈글문자는 원래 OCR(광학문자인식)을 사용하여 기계적 처리가 쉽게 가능하도록  계획된 문자였다. 필기체는 없고 문자의 두께와 비율이 일정하게 유지된다. 형태적 다양성을 위해서 문자폭이 가변적이지만 흑백의 반복되는 패턴이 일정하고 규칙적이여서 사진이나 영상속의 빈글문자를 쉽게 추출할 수 있다.</p>
+<blockquote>
+<div><blockquote>
+<div><a class="reference internal image-reference" href="../_images/말과소.svg"><img alt="../_images/말과소.svg" height="60" src="../_images/말과소.svg" /></a>
+<p><cite>말과 소는 풀을 먹고 들을 달린다.</cite></p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">ZqWVeAtwWVNWWMAOQPEAUHDZvTVeEEAVEKLAugAEAURLUhCVEcEAVEKRNUXuQEAVeEEAVOG</span></code></p>
+</div></blockquote>
+<p>보통 문자의 자동인식에 있어서 문자 수가 적은 알파벳의 경우 인식율이 높고 한글이나 한자와 같이 문자 수가 크면 인식율이 떨어진다. 그러나 최근에는 머신러닝이 도입되어 인식율은 빠르게 개선되고 있고 특정한 분야에서 사람과 대등한 인식능력을 보여주고 있다.</p>
+<p>빈글은 문자인식에 있어서 다른 언어의 문자들과 비교한다면 매우 간편한 편이다. 빈글은 규칙적이고 정형화된 형태를 지니기 때문에 자동인식 프로그램에서 일반적인 문자유형 처럼 처리하는 대신 특정한 패턴들이 반복되는 바코드처럼 처리할 수 있다. 따라서 빈글문자는 머신러닝을 사용하지 않고도 쉽게 자동인식 프로그램을 제작할 수 있다. 더우기 머신러닝을 적용한다면 인식기능을 더욱 향상시킬 수 있을 것이다.</p>
+<div class="section" id="opencv">
+<h2>OpenCV를 사용한 빈글문자인식<a class="headerlink" href="#opencv" title="제목 주소">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/fig02-show4.png"><img alt="../_images/fig02-show4.png" src="../_images/fig02-show4.png" style="width: 500px;" /></a>
+<p>위 이미지들은 OpenCV를 사용하여 원본이미지에서 빈글문자가 있는 영역을 추출해내는
+과정이다.</p>
+<ul class="simple">
+<li>원본이미지를 적정한 비율로 흑백이미지로 만든다.</li>
+<li>문자획의 픽셀들을 확장시켜서 이어진 하나의 덩어리가 되도록 한다.</li>
+<li>다음엔 이미지에서 덩어리들을 감싸는 사각형들을 구한다.</li>
+<li>그 사각형 중엔 빈글문자가 아닌것들도 포함되어있다.</li>
+<li>빈글문자는 일정한 분포를 가지고 있어 흑백 픽셀의 확장과 수축시에 흑백의 비율이 크게 차이가 있는 사각형영역을 빈글문자로 판단한다.</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/fig03-.png"><img alt="../_images/fig03-.png" src="../_images/fig03-.png" style="width: 500px;" /></a>
+<p>빈글문자로 인식된 비스듬한 사각영역을 바로 세운다. 이제 빈글문자의 획들에서 직접 코드값을 구할수 있다.</p>
+<a class="reference internal image-reference" href="../_images/fig04-.png"><img alt="../_images/fig04-.png" src="../_images/fig04-.png" style="width: 500px;" /></a>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="FFC코드.html" title="이전 장">FFC 코드</a></li>
+      <li>Next: <a href="빈글자동인식2.html" title="다음 장">빈글과 자동인식 - 2</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="바로 가기" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, budl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/doc/빈글자동인식.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

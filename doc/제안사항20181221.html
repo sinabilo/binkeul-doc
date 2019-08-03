@@ -1,0 +1,239 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>몇몇 개선사항 (20181221제안) &#8212; binkeul user doc 0.8 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="FFC 코드" href="FFC코드.html" />
+    <link rel="prev" title="동파문자와 빈글" href="동파문자와빈글.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>몇몇 개선사항 (20181221제안)<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<p>다음은 한형준님이 제안하신 것에 의거하여 빈글의 문자와 문법을 개선한 것이다. 기존의 문법을 크게 벗어나지 않는 선에서 몇가지 사항을 추가하거나 기존의 개념을 보완하였다.</p>
+<div class="section" id="id2">
+<h2>능격과 절대격<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/차잔01.svg"><img alt="../_images/차잔01.svg" height="60" src="../_images/차잔01.svg" /></a>
+<p><cite>나는 찾잔이 굴러떨어졌다.</cite></p>
+<a class="reference internal image-reference" href="../_images/차잔02.svg"><img alt="../_images/차잔02.svg" height="60" src="../_images/차잔02.svg" /></a>
+<p><cite>나는 찾잔을 굴러떨어뜨렸다.</cite></p>
+</div>
+<div class="section" id="id3">
+<h2>양수(兩數)와 복수(複數)<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
+<p>어떤 사물이나 사람 등이 쌍으로 있는 경우, 복수를 표시하는 부호를 사용해도 되지만 복수 대신 양수를 사용하면 원하는 의미를 더 잘 나타낼 수 있다.</p>
+<img alt="../_images/쌍수양수.png" src="../_images/쌍수양수.png" />
+</div>
+<div class="section" id="id4">
+<h2>획 쓰는 순서<a class="headerlink" href="#id4" title="제목 주소">¶</a></h2>
+<p>문자마다 획을 쓰는 순서를 정하자는 좋은 제안이 있었다. 현재 획을 쓰는 데는 별 원칙도 없고 순서도 없다. 일단 문자의 쓰는 순서가 정해지면 문자획의 입력시 마다 이루어지는 유사한 문자들의 검색과 코드입력의 절차가 더 간소화 될 수 있는 이점이 있다.</p>
+<p>그러나 문자마다 쓰는 순서를 정하는 것은 상당한 시간이 걸릴 것이다. 그렇기에 일반적인 원칙만 정하기로 한다. 그리고 이는  다만 권장 사항이다.</p>
+<ul class="simple">
+<li>이어진 획들은 위에서 아래로, 왼쪽에서 오른쪽으로 그린다.</li>
+<li>사선의 경우에는 좌상에서 우하로 또는 우상에서 좌하로 그린다.</li>
+<li>크고 긴 획을 먼저 그린다. 떨어진 점획은 나중에 그린다.</li>
+</ul>
+<img alt="../_images/쓰기순서.png" src="../_images/쓰기순서.png" />
+</div>
+<div class="section" id="id5">
+<h2>성조표기<a class="headerlink" href="#id5" title="제목 주소">¶</a></h2>
+<p>표음문자는 성조를 함께 표기할 수 있다. 성조는 IPA ( <a class="reference external" href="https://en.m.wikipedia.org/wiki/Tone_letter">https://en.m.wikipedia.org/wiki/Tone_letter</a> ) 를 기본으로 구성되다. 다음은 IPA 의 성조부호에 대응하는 빈글의 성조부호이다.</p>
+<img alt="../_images/IPA성조.png" src="../_images/IPA성조.png" />
+<p>표음문자로 이루어진 단어에서 성조는 음절 뒤 또는 모음 뒤에 온다. 조합된 문자인 경우에는 음절 뒤에 온다.</p>
+</div>
+<div class="section" id="id6">
+<h2>무성음 음소문자<a class="headerlink" href="#id6" title="제목 주소">¶</a></h2>
+<p>기본형 표음문자에서 유성음과 모음 문자는 세로로 길고 무성음 가로로 길다.
+따라서 무성음은 문자조합이나 일렬로 늘여쓸 때 다른 문자들과 잘 어울리지 않게 보이는 단점이 있다. 이런 경우 무성음화 덧부호를 사용하면 좋다. 무성음화 덧부호가 있으면 그 표음문자(자음문자)는 그에 관계되는 무성음으로 변한다.</p>
+<blockquote>
+<div><img alt="../_images/세로무성음.png" src="../_images/세로무성음.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h2>알파벳의 확장형<a class="headerlink" href="#id7" title="제목 주소">¶</a></h2>
+<p>알파벳은 A-Z 까지 26 개의 기본 알파벳이 있다. 알파벳은 의존형과 독립형이 있으며 숫자와 함께 사용되거나 표음문자와 함께 사용하여 표음단어를 만들 수 있다.</p>
+<p>알파벳은 또한 확장형을 만들어 사용할 수 있다. 기본 알파벳이 의존형과 독립형이 있는 반면 확장형 알파벳은 모두 의존형이다.</p>
+<p>확장알파벳의 문자형태는 기본 알파벳 문자의 아래쪽이나 오른쪽으로 문자의 획이 늘어나거나 덧부호가 붙는 방식이다. 또는 기존의 알파벳과 유사하지 않은 전혀 새로운 문자를 추가해도 된다.</p>
+<p>단 확장 알파벳은 숫자로 사용할 수 없다.</p>
+<blockquote>
+<div><img alt="../_images/확장알파벳.png" src="../_images/확장알파벳.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h2>격조사의 특징<a class="headerlink" href="#id8" title="제목 주소">¶</a></h2>
+<p>용언에 사용되는 동사를 함수라고 생각할 때, 격조사는 함수에서 꼭 필요한 인수라고 볼 수 있다. 이에 반해 후치사는 키워드인수로 볼 수 있다. python 프로그래밍 언어에서
+함수의 위치인수(positional argument)와 키워드인수(keyword argument)의 관계를 생각하면 이해하는데 도움이 된다. 또한 격조사는 동사에 따라 다르게 해석될 수 있다. 이에 반해 후치사는 고정적으로 해석된다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/떠나다.svg"><img alt="../_images/떠나다.svg" height="60" src="../_images/떠나다.svg" /></a>
+<p><cite>그녀는 너를(너로 부터) 떠났다.</cite></p>
+<a class="reference internal image-reference" href="../_images/캐리마크.svg"><img alt="../_images/캐리마크.svg" height="60" src="../_images/캐리마크.svg" /></a>
+<p><cite>캐리는 마크에게 강아지를 보여 주었다.</cite></p>
+<img alt="../_images/격조사01.png" src="../_images/격조사01.png" />
+</div></blockquote>
+<p>즉, 동일한 격조사라도 동사에 따라 다른 용도로 쓰이게 된다.</p>
+<blockquote>
+<div><img alt="../_images/격조사02c.png" src="../_images/격조사02c.png" />
+</div></blockquote>
+<p>주격, 속격, 목적격, 대격, 탈격, 조격, 처격, 호격, 공동격, 방항격, 원인격, 등의
+격은 어느 특정한 격조사에 정해진 것이 아니라 동사에 따라 필요한 격을 위 열거된 다양한 격조사들 중 일부를 적절하게 셋팅하여 사용하면 된다. 자유로운 점이 있지만 동사들 간에 격조사의 설정에 있어서 유사성이 어느 정도 유지되는 것을 권장한다.</p>
+</div>
+<div class="section" id="self">
+<h2>스스로 -하다 &lt;self 용언꼬리&gt;<a class="headerlink" href="#self" title="제목 주소">¶</a></h2>
+<blockquote>
+<div><img alt="../_images/스스로.png" src="../_images/스스로.png" />
+</div></blockquote>
+<p>&quot;스스로 ~ 하다&quot; 는 문장을 만드는 데는 불합성자나 용언꼬리를 사용할 수 있다.
+<code class="docutils literal"><span class="pre">스스로-</span></code> 불합성자, 용언꼬리는 원래 &quot;자체&quot;,&quot;자신&quot; 의 뜻을 지닌 문자에서 파생된 것이다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/스스로아이01.svg"><img alt="../_images/스스로아이01.svg" height="60" src="../_images/스스로아이01.svg" /></a>
+<p><cite>저 아이가 스스로 걷기 시작한다.</cite> [용언꼬리 사용]</p>
+<a class="reference internal image-reference" href="../_images/스스로아이02.svg"><img alt="../_images/스스로아이02.svg" height="60" src="../_images/스스로아이02.svg" /></a>
+<p><cite>저 아이가 스스로 걸음을 시작한다.</cite> [불합성자 사용]</p>
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h2>절대적 인칭<a class="headerlink" href="#id9" title="제목 주소">¶</a></h2>
+<blockquote>
+<div><img alt="../_images/절대인칭.png" src="../_images/절대인칭.png" />
+</div></blockquote>
+<p>절대적인칭은 같은 기초문자 위에 점이나 바가 붙어서 인칭을 구분한다.
+기존의 '나', '너', '그' 는 상대적인칭이다. 의미상 별 차이는 없다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/그들공감.svg"><img alt="../_images/그들공감.svg" height="60" src="../_images/그들공감.svg" /></a>
+<p><cite>나는 그들에 대해 공감하고 있다.</cite></p>
+<a class="reference internal image-reference" href="../_images/우리둘너희둘.svg"><img alt="../_images/우리둘너희둘.svg" height="60" src="../_images/우리둘너희둘.svg" /></a>
+<p><cite>우리들(두사람)이 너희들(두사람)에게 간다</cite></p>
+</div></blockquote>
+<p>굳이 차이를 찾는 다면 상대적시점(주관적시점)에서는 주관과 의지가 내재되어 있다면 절대적시점(객관적시점)에는 주관성이 배제되어있다. 또한 주관적시점의 '나', '너' 는 절대적시점의 '나', '너' 보다 더 강조적이다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/강을건너야한다.svg"><img alt="../_images/강을건너야한다.svg" height="60" src="../_images/강을건너야한다.svg" /></a>
+<p><cite>너는 나와 함께 그 지그재그로 난 강을 건너야 한다.</cite></p>
+</div></blockquote>
+<p>이 글을 절대적 인칭의 특징을 반영해서 의역을 하면 다음과 같다.</p>
+<blockquote>
+<div><cite>너라는 자는 나라는 자와 함께 그 지그재그로 난 강을 건너야 한다.</cite></div></blockquote>
+<p>즉 객관적 당위성이 더 엿보인다.</p>
+<p>이에 반해 기존의 대명사를 사용하면 보다 주관적인 요구사항에 가까운 의미가 된다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/강을건너야한다-2.svg"><img alt="../_images/강을건너야한다-2.svg" height="60" src="../_images/강을건너야한다-2.svg" /></a>
+<p><cite>너는 나와 함께 그 지그재그로 난 강을 건너야 한다.</cite> (너와 함께 가고 싶다)</p>
+</div></blockquote>
+<p>주관적 의지를 보여준다고 할 수 있다.</p>
+<p>그러나 일상적이거나 모호한 경우라면 굳이 절대적인칭과 상대적인칭을 구분하지 않고 사용해도 무방하다.</p>
+</div>
+<div class="section" id="id10">
+<h2>용언꼬리의 인칭에 따른 변화<a class="headerlink" href="#id10" title="제목 주소">¶</a></h2>
+<blockquote>
+<div><img alt="../_images/용언꼬리변화.png" src="../_images/용언꼬리변화.png" />
+</div></blockquote>
+<p>주어의 인칭에 따라 용언꼬리는 변화될 수 있다. 절대인칭에서 점과 바가 붙는 것처럼 용언부호위에 인칭에 맞는 한점, 두점, 바를 붙여주면 된다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/내마음안03.svg"><img alt="../_images/내마음안03.svg" height="60" src="../_images/내마음안03.svg" /></a>
+<p><cite>그는 내 마음 안에서 노래부르고 있다.</cite></p>
+</div></blockquote>
+<p>주어가 있는 경우에는 용언꼬리 변화는 선택적이다. 일반적으로 기존의 방식대로 아무런 변화없이 용언꼬리를 사용한다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/내마음안01.svg"><img alt="../_images/내마음안01.svg" height="60" src="../_images/내마음안01.svg" /></a>
+<p><cite>그는 내 마음 안에서 노래부르고 있다.</cite></p>
+</div></blockquote>
+<p>다음 문장은 용언꼬리에 인칭의 변화가 반영되어 있으므로
+주어가 생략되어 있어도 동일한 의미로 해석될 수 있다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/내마음안02.svg"><img alt="../_images/내마음안02.svg" height="60" src="../_images/내마음안02.svg" /></a>
+<p><cite>(그는) 내 마음 안에서 노래부르고 있다.</cite></p>
+</div></blockquote>
+<p>다음은 의문문과 인칭의 복수형에서 용언꼬리의 인칭변화로 주어를 생략한 경우를 보여주고 있다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/BTS춤01.svg"><img alt="../_images/BTS춤01.svg" height="60" src="../_images/BTS춤01.svg" /></a>
+<p><cite>너는 BTS춤을 좋아하니?</cite></p>
+<a class="reference internal image-reference" href="../_images/BTS춤02.svg"><img alt="../_images/BTS춤02.svg" height="60" src="../_images/BTS춤02.svg" /></a>
+<p><cite>(너는) BTS춤을 좋아하니?</cite></p>
+</div></blockquote>
+<p>이 문장은 상대방(너)에게 묻는 것으로 주어의 생략이 더 자연스럽다.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/BTS춤03.svg"><img alt="../_images/BTS춤03.svg" height="60" src="../_images/BTS춤03.svg" /></a>
+<p><cite>너희들은 BTS춤을 좋아하니?</cite></p>
+<a class="reference internal image-reference" href="../_images/BTS춤04.svg"><img alt="../_images/BTS춤04.svg" height="60" src="../_images/BTS춤04.svg" /></a>
+<p><cite>(너희들은) BTS춤을 좋아하니?</cite></p>
+</div></blockquote>
+<p>복수형의 경우 주어가 생략되면 일반명사의 복수형을 만드는 것처럼 용언에 사용된 동사를 복수형으로 만들면 된다.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="동파문자와빈글.html" title="이전 장">동파문자와 빈글</a></li>
+      <li>Next: <a href="FFC코드.html" title="다음 장">FFC 코드</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="바로 가기" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, budl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/doc/제안사항20181221.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

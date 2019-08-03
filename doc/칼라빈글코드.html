@@ -1,0 +1,210 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>큐비코드(Qb-Code, 빈글 매트릭스) &#8212; binkeul user doc 0.8 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="확장 알파벳과 숫자" href="확장알파벳숫자.html" />
+    <link rel="prev" title="빈글 폰트" href="빈글폰트.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="qb-code">
+<h1>큐비코드(Qb-Code, 빈글 매트릭스)<a class="headerlink" href="#qb-code" title="제목 주소">¶</a></h1>
+<p>큐비코드(빈글 매트릭스)는 빈글문자열과 함께 추가적인 데이타를 2차원 패턴의 이미지로 저장할 수 있는 코드형식이다.
+바코드나 큐알코드 처럼 이미지 스캔하여 컴퓨터로 판독할수 있으며 대량의 데이터를 입력할 수 있다. 따라서 바코드 등과 유사한 용도로 사용 가능하다. 이에 더하여 큐비코드는 빈글문자열을 소스코드로 사용하여 명령을 수행할 수도 있다.</p>
+<p>여백의 배경으로 실루엣 이미지를 넣을 수 있는데 코드의 기능을 나타내는 용도로 사용하거나 예술적인 표현이 가능하다. 데이타로 시를 넣거나 캘리그라피, 동양화 같은 구도로 이미지와 글을 쨔 넣을 수 있다. 글과 이미지를 조합하여 다양하게 응용할 수 있다.</p>
+<a class="reference internal image-reference" href="../_images/$namu-c.png"><img alt="../_images/$namu-c.png" class="align-center" src="../_images/$namu-c.png" style="width: 300px;" /></a>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Qb코드</dt>
+<dd><ul class="first last">
+<li>qC : 빈글이 포함되지 않는 체크패턴</li>
+<li>qCB : 빈글이 포함된 체크패턴</li>
+<li>qB : 빈글이 포함된 흑백이미지</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="qb">
+<h2>Qb코드의 특징<a class="headerlink" href="#qb" title="제목 주소">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>가로 세로의 비율을 가변적으로 조정할 수 있다.</li>
+<li>크기에 제한이 없으므로 데이터의 크기 제한이 없다.</li>
+<li>dictionary 구조의 사용하므로 키가 있는 데이터 여러 개를 함께 저장할 수 있다.</li>
+<li>실루엣 이미지를 넣어서 코드를 구별하기 좋다.</li>
+<li>이미지 손상되어도 복구가능하다.</li>
+<li>이미지가 회전되어도 상관없이 읽을 수 있다.</li>
+<li>빈글문자열은 파싱하고 데이타와 연계시켜서 특정한 작업을 수행하게 할 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>Qb코드의 구조<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
+<p>빈글 칼라바코드(Qb코드)는 빈글의 문자열과 추가적인 데이타를 함께 묶어서 직사각형 박스에</p>
+<p>8가지 색상을 체크패턴으로 데이타를 저장한다.</p>
+<img alt="../_images/칼라코드.PNG" src="../_images/칼라코드.PNG" />
+<ul class="simple">
+<li>각 셀당 2bit 를 저장한다.</li>
+<li>헤더: 이미지의 네 귀퉁이 부분에 여러 벌을 복사하여 분산 저장되어 있으며 데이터의 크기, 모드, 체크썸을 저장한다. 이미지의 가로, 세로 픽셀 수가 적으면 헤더의 일정부분을 생략하여 크기를 줄인다.</li>
+<li><dl class="first docutils">
+<dt>데이터 요소</dt>
+<dd><ul class="first last">
+<li>CODATA : 각 셀들의 색상으로 저장되는 데이터</li>
+<li>KEUL : 빈글문자열</li>
+<li>EX1 : 빈글문자열의 언어범주 (KEUL 의 부수적 요소)</li>
+<li>EX2 : 추가적인 데이터, 덧붙이는 글, 저작자, 날짜 등</li>
+<li>SLT : 실루엣이미지, 데이터에 아무런 영향도 주지 않는다.</li>
+<li>RS : Keul 문자맵의 복구를 위한 자동 추가 데이터. 여백이 충분할 때만 사용됨</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>CODATA 에서 용량이 남을 때는 가능한한 복구를 위한 데이타로 사용한다.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>생성 스크립트<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">qbmake</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">h</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">qbmake</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">u</span> <span class="n">INPUT</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">w</span> <span class="n">HXW</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span> <span class="n">LIMIT</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">r</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}]</span> <span class="p">[</span><span class="o">-</span><span class="n">m</span> <span class="n">RSM</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">-</span><span class="n">k</span> <span class="n">KEUL</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">e</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="o">...</span><span class="p">]]]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="n">SLT</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">-</span><span class="n">q</span> <span class="n">QBMODE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">OUT</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">t</span><span class="p">]</span>
+                 <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="o">...</span><span class="p">]]</span>
+
+<span class="n">Make</span> <span class="n">Qb</span> <span class="n">Code</span><span class="p">,</span> <span class="n">빈글</span> <span class="n">바코드</span> <span class="n">생성</span>
+
+<span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span>               <span class="n">데이터</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">u</span> <span class="n">INPUT</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span>
+                        <span class="n">base</span> <span class="nb">input</span> <span class="n">script</span> <span class="p">[</span><span class="o">*.</span><span class="n">py</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;DATA = ...&#39;</span>
+  <span class="o">-</span><span class="n">w</span> <span class="n">HXW</span><span class="p">,</span> <span class="o">--</span><span class="n">hxw</span> <span class="n">HXW</span>     <span class="n">픽셀크기</span> <span class="p">[</span><span class="n">기본값</span> <span class="mi">10</span><span class="p">]</span>
+  <span class="o">-</span><span class="n">l</span> <span class="n">LIMIT</span><span class="p">,</span> <span class="o">--</span><span class="n">limit</span> <span class="n">LIMIT</span>
+                        <span class="n">x축</span> <span class="n">한계</span> <span class="p">[</span><span class="n">기본값</span> <span class="mi">30</span><span class="p">]</span>
+  <span class="o">-</span><span class="n">r</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span> <span class="o">--</span><span class="n">ro90</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+                        <span class="mi">90</span><span class="n">도</span> <span class="n">회전</span> <span class="n">횟수</span>
+  <span class="o">-</span><span class="n">m</span> <span class="n">RSM</span><span class="p">,</span> <span class="o">--</span><span class="n">rsm</span> <span class="n">RSM</span>     <span class="n">reedsolo</span> <span class="n">sym</span>
+  <span class="o">-</span><span class="n">k</span> <span class="n">KEUL</span><span class="p">,</span> <span class="o">--</span><span class="n">keul</span> <span class="n">KEUL</span>  <span class="n">빈글</span> <span class="n">문자열</span>
+  <span class="o">-</span><span class="n">e</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="o">...</span><span class="p">]],</span> <span class="o">--</span><span class="n">ex2</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="o">...</span><span class="p">]]</span>
+                        <span class="n">ex2</span> <span class="n">데이터</span>
+  <span class="o">-</span><span class="n">s</span> <span class="n">SLT</span><span class="p">,</span> <span class="o">--</span><span class="n">slt</span> <span class="n">SLT</span>     <span class="n">실루엣</span> <span class="n">이미지</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">invert</span><span class="o">-</span><span class="n">slt</span>      <span class="n">실루엣</span> <span class="n">이미지반전</span>
+  <span class="o">-</span><span class="n">q</span> <span class="n">QBMODE</span><span class="p">,</span> <span class="o">--</span><span class="n">qbmode</span> <span class="n">QBMODE</span>
+                        <span class="n">QBMODE</span><span class="p">:</span> <span class="n">KEUL</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">NONE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="o">-</span><span class="n">o</span> <span class="n">OUT</span><span class="p">,</span> <span class="o">--</span><span class="n">out</span> <span class="n">OUT</span>     <span class="n">출력</span> <span class="n">이미지</span> <span class="n">경로</span>
+  <span class="o">-</span><span class="n">b</span><span class="p">,</span> <span class="o">--</span><span class="n">border</span>          <span class="n">결과</span> <span class="n">이미지</span> <span class="n">외곽</span>
+  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">invert</span>          <span class="n">결과</span> <span class="n">이미지반전</span>
+  <span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="n">test</span>            <span class="n">결과</span> <span class="n">데이타</span> <span class="n">검증</span> <span class="n">테스트</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>샘플<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
+<img alt="../_images/$dust-c.png" class="align-center" src="../_images/$dust-c.png" />
+<div class="code highlight-default"><div class="highlight"><pre><span></span>python -m pinkeul.utils.qbmake  &quot;하늘과강과길이만나는곳,영겁의시공간을우리들의세포가떠돌던그이상도이하도아닌먼지자욱한이곳&quot;  -r 0 -l35 -e 먼지와길 20190303 -k ZqWPeuPZMOAWxpWUFeUjWwmM -s  https://3.bp.blogspot.com/-byHUwOTZJkg/XHy1s8Dj4VI/AAAAAAAAAno/mHw0Zt0IoswrDOaVtI0-NJHDisof3nx5QCLcBGAs/s1600/SAM_3598.JPG -o  $dust-c.png
+</pre></div>
+</div>
+<img alt="../_images/$byc-c.png" class="align-center" src="../_images/$byc-c.png" />
+<div class="code highlight-default"><div class="highlight"><pre><span></span>python -m pinkeul.utils.qbmake  &quot;두 개의 바퀴로 지구를 굴리니 이르지 못할 곳이 없네&quot;  -r 2 -l40 -k vkGvkCZqWPeu -e &#39;부들과자전거&#39; -s  $byc.png -o  $byc-c.png
+</pre></div>
+</div>
+<img alt="../_images/$nan-c.png" class="align-center" src="../_images/$nan-c.png" />
+<div class="code highlight-default"><div class="highlight"><pre><span></span>py3 -m pinkeul.utils.qbmake  &quot;난초의 꿈과 나비의 꿈이 만나는 곳에 꽃이 피었네&quot;  -r 3 -l55 -k FAxiXQRMECEAtwWqYAuHIvHMWjWqYAuHI -e &#39;난과나비&#39; -s  $nan.png -o  $nan-c.png
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>참고자료<a class="headerlink" href="#id4" title="제목 주소">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>리드 솔로몬 오류 정정</dt>
+<dd><p class="first"><a class="reference external" href="https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction">https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction</a></p>
+<p class="last"><a class="reference external" href="https://pypi.org/project/reedsolo/">https://pypi.org/project/reedsolo/</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="빈글폰트.html" title="이전 장">빈글 폰트</a></li>
+      <li>Next: <a href="확장알파벳숫자.html" title="다음 장">확장 알파벳과 숫자</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="바로 가기" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, budl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/doc/칼라빈글코드.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

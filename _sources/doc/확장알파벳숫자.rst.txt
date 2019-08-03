@@ -1,0 +1,31 @@
+==========================
+확장 알파벳과 숫자
+==========================
+
+숫자와 알파벳은 모두 의존형으로 만들고 숫자 독립형은 기수, 서수, 유리수 등의 부호 
+알파벳 독립형은 자주 사용되는 전용 부호 
+
+.. image:: /_static/확장알파벳숫자/m01-그는아브라카타브라.svg
+   :height: 60   
+   
+Abracadabra
+   
+.. image:: /_static/확장알파벳숫자/m02-그는아브라카타브라.svg
+   :height: 60   
+   
+.. image:: /_static/확장알파벳숫자/ap10-알파문자.png
+   
+.. image:: /_static/확장알파벳숫자/dn10-동파문자형숫자c.png
+
+.. image:: /_static/확장알파벳숫자/ks10-키르스형알파벳.png
+
+
+
+키르스 문자 
+
+.. image:: https://upload.wikimedia.org/wikipedia/commons/b/b3/Cirth_final_version.svg
+
+
+.. image:: /_static/확장알파벳숫자/4522abr.svg
+   :height: 80
+

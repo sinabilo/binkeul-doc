@@ -1,0 +1,241 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>빈글의 다양한 표현 &#8212; binkeul user doc 0.8 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="빈글 폰트" href="빈글폰트.html" />
+    <link rel="prev" title="Welcome to binkeul user doc&#39;s documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>빈글의 다양한 표현<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<p>빈글은 시각적으로 다양한 방식으로 표현할 수 있다. 다음은 디지털기기에서 가능한 방식들이다.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>이미지</dt>
+<dd><ul class="first last">
+<li>PNG 이미지</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>SVG</dt>
+<dd><ul class="first last">
+<li>정체</li>
+<li>거친체 (betlsvg 스크립트)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>텍스트 (웹폰트 사용)</dt>
+<dd><ul class="first last">
+<li>위지윅</li>
+<li>아스키아트</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>2차원 바코드</dt>
+<dd><ul class="first last">
+<li>qB코드 ( quick Binkeul )</li>
+<li>qCB코드 ( quick Checked Binkeul )</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>이미지는 빈글을 만드는 기초적인 방법으로 PNG 파일로 저장된다. SVG 는 벡터방식의 이미지로 가장 자주 사용한다. HTML과 웹에서는 SVG 대신 웹폰트를 사용하기도 한다. OCR 자동인식에는 qB코드, qCB코드를 사용을 권장한다.</p>
+<p>다음은 이 문장(세계 인권 선언 제1조)을 여러가지 형식으로 표현해 보았다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">모든</span> <span class="n">사람은</span> <span class="n">태어나면서부터</span> <span class="n">자유롭고</span><span class="p">,</span> <span class="n">존엄과</span> <span class="n">권리에</span> <span class="n">있어</span> <span class="n">평등하다</span><span class="o">.</span>
+<span class="n">모든</span> <span class="n">사람은</span> <span class="n">이성과</span> <span class="n">양심을</span> <span class="n">타고났으며</span> <span class="n">서로</span> <span class="n">동포의</span> <span class="n">정신으로</span> <span class="n">행동하여야</span> <span class="n">한다</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>이미지<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<p>빈글을 이미지로 그리는 것은 가장 초기의 방식이였다. 문자 크기가 변할 때는 새로 이미지를 만들어야 하는 단점이 있다.</p>
+<img alt="../_images/hm01-2.png" src="../_images/hm01-2.png" />
+<p>2 pixel</p>
+<img alt="../_images/hm01-4.png" src="../_images/hm01-4.png" />
+<p>4 pixel</p>
+<img alt="../_images/hm01-8.png" src="../_images/hm01-8.png" />
+<p>8 pixel</p>
+</div>
+<div class="section" id="svg">
+<h2>SVG<a class="headerlink" href="#svg" title="제목 주소">¶</a></h2>
+<p>벡터방식의 이미지는 문자크기에 관계없이 동일하게 표현된다는 장점도 있다.</p>
+<div class="section" id="id3">
+<h3>정체<a class="headerlink" href="#id3" title="제목 주소">¶</a></h3>
+<p>정체는 정점을 지나는 직선들로 이루어지기 때문에 크기도 작다. 다음은 한 문자의 SVG 코드이다. 폴리곤을 이루는 점의 좌표는 -9~9 사이의 정수값이므로 모든 수가 한자리 수로 이루어져 있다.</p>
+<div class="code html highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">path</span> <span class="n">d</span><span class="o">=</span><span class="s2">&quot;M 3 9 3 7 4 7 6 5 1 5 1 3 3 3 3-1 5-1 5</span>
+<span class="mi">3</span> <span class="mi">9</span> <span class="mi">3</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">8</span> <span class="mi">5</span> <span class="mi">5</span> <span class="mi">8</span> <span class="mi">5</span> <span class="mi">9</span><span class="n">zM</span><span class="o">-</span><span class="mi">5</span> <span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span> <span class="mi">3</span><span class="o">-</span><span class="mi">1</span> <span class="mi">3</span><span class="o">-</span><span class="mi">1</span> <span class="mi">5</span><span class="o">-</span><span class="mi">4</span>
+<span class="mi">5</span><span class="o">-</span><span class="mi">7</span> <span class="mi">8</span><span class="o">-</span><span class="mi">7</span> <span class="mi">9</span><span class="o">-</span><span class="mi">9</span> <span class="mi">9</span><span class="o">-</span><span class="mi">9</span> <span class="mi">7</span><span class="o">-</span><span class="mi">8</span> <span class="mi">7</span><span class="o">-</span><span class="mi">6</span> <span class="mi">5</span><span class="o">-</span><span class="mi">9</span> <span class="mi">5</span><span class="o">-</span><span class="mi">9</span> <span class="mi">3</span><span class="n">zM</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">3</span>
+<span class="o">-</span><span class="mi">5</span><span class="n">zM</span> <span class="mi">5</span><span class="o">-</span><span class="mi">3</span> <span class="mi">3</span><span class="o">-</span><span class="mi">3</span> <span class="mi">3</span><span class="o">-</span><span class="mi">5</span> <span class="mi">5</span><span class="o">-</span><span class="mi">5</span><span class="n">zM</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="n">z</span><span class="s2">&quot; id=</span>
+<span class="s2">&quot;pdSPvJ&quot;</span> <span class="n">transform</span><span class="o">=</span><span class="s2">&quot;translate(0,0) skewX(-5)&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/모든사람.svg"><img alt="../_images/모든사람.svg" height="120" src="../_images/모든사람.svg" /></a>
+<p>정체 SVG 파일은 빈글 에디터에서 만들 수 있다.</p>
+<a class="reference internal image-reference" href="../_images/빈글편집기.png"><img alt="../_images/빈글편집기.png" src="../_images/빈글편집기.png" style="width: 600px;" /></a>
+<p>빈글에디터는 바이너리로 저장하거나 다음과 같은 텍스트로 엔코딩(z3a2엔코딩)하여 빈글을 저장한다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pPMVKAUjWXSiEAUHDTQQTGSybKVbRyHMVbfEAVEKtxSt</span>
+<span class="n">wzvIQWGltxStwzPCIxFAEAVEKybOUyqtwWVNWWUQVOTE</span>
+<span class="n">AUsIEAVOGtxStwztxStwzpPMVKAUjWXSiEAUHDZuWVJE</span>
+<span class="n">EBtXHUaSPLNEAVEKpdSPvJwrWwOGvFUufiEAVOG</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>거친체<a class="headerlink" href="#id4" title="제목 주소">¶</a></h3>
+<p>거친체는 선이 사람이 쓴 것 처럼 거칠다.</p>
+<a class="reference internal image-reference" href="../_images/a.svg"><img alt="../_images/a.svg" height="120" src="../_images/a.svg" /></a>
+<p>거친체를 만들 때는 <code class="docutils literal"><span class="pre">betlsvg.py</span></code> 스크립트를 사용한다.</p>
+<a class="reference internal image-reference" href="../_images/betlsvg-h.png"><img alt="../_images/betlsvg-h.png" src="../_images/betlsvg-h.png" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>텍스트 (웹폰트 사용)<a class="headerlink" href="#id5" title="제목 주소">¶</a></h2>
+<p>텍스트 방식은 빈글폰트가 적용된 텍스트를 여러줄에 걸쳐서 ASCII-ART 형식으로 나타낸다. 따라서 간단한 텍스트에디터를 사용할 수 있다. 다양한 기능이 있는 편집기를 사용할 경우 문자간격과 줄간격의 설정에 주의해야 한고 다른 문자와 섞이지 않도록 글박스를 사용할 필요가 있다. HTML 문서를 만든다면 웹폰트를 사용하면 편리하다. 표준적인 브라우저에서는 거의 동일하게 표현된다.</p>
+<font size=2>
+<pre><code>
+                                +-+       +       +   +   +         +       + + +             + +
+                                  |       |       |                         | | |             | |
++   +   +     +-+-+ + + +-+-+   +-+-+     + + + + + + +   + +     +-+-+ +-+ +-+-+ + +         + +
+ \  |  /|       |  /|/      |     | |     |  /|\| |   |\ /|         |         | | | |         | |
++-+-+ + + +     + + +     +-+ + +-+ + +   + + + + + + + + + + +   + + + +-+   + +-+-+ + + +-+ + +
+   \|  /  |     |  /|     |   | | |    \  |  \|   | | |   | |  \   / \   *    |   |    *      | |
+    + +   +-+   +-+ +   + +-+ + +-+   + + +   +   + + +   + + + + + + + + + +-+   +-+ + + +-+ + +
+       \                      |   |   |/                      |/
+  +-+   +  -              +   +-+-+   +                       +                       + + +-+
+
+                                +-+
+                                  |
++   +   +       + + + +       +-+-+-+       +   +     + +-+ + + +
+ \  |  /|       | |   |       | | | |                /|*      |
++-+-+ + + +     +-+-+-+ +     + +-+ + +     + + +   + + +-+  -+ + +-+
+   \|  /  |       |     |\   /|/| | |  \    |   |    / /        |
+    + +   +-+ +-+-+ +   + + + + + + + + + +-+- -+-+ + + +-+ +-+-+ +-+
+       \                 /            |/   /     /   \ /
+  +-+   +  -            + +           +   +     +     +      - -  +-+
+</code></pre></font><p>빈글폰트는 두 가지 형식의 텍스트에 적용할 수 있다. 빈글의 획과 여백이 잘 들어나는 방식(위)과
+모든 여백에 걸친 윤곽선을 정교하게 표현한 방식(아래) 이다.</p>
+<font size=2>
+<pre><code>
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRWUWRRRRRRRWRRRRRRRWRRRWRRRWRRRRRRRRRWRRRRRRRWRWRWRRRRRRRRRRRRRWRWRRR
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRVRRRRRRRVRRRRRRRVRRRRRRRRRRRRRRRRRRRRRRRRRVRVRVRRRRRRRRRRRRRVRVRRR
+WCRRWRRDWRRRRRWUWUWDWDWRWUWUWRRRWUWUWRRRRRWRWDWCWRWRWRWCRDWRWRRRRRWUWUWRWUWRWUWUWRWRWRRRRRRRRRWRWRRR
+BYCRVRDZVRRRRRRRVRDZVZARRRRRVRRRRRVRVRRRRRVRDZVYVRVRRRVYHZVRRRRRRRRRVRRRRRRRRRVRVRVRVRRRRRRRRRVRVRRR
+WUWUWRWIWRWRRRRRWRWIWARRRRWUWRWRWUWRWRWCRRWRWEWBWRWRWRWBWAWRWRWCRRWDWCWRWUWRRRWRWUWUWRWHWRWUWRWRWRRR
+RRBYVRDZARVRRRRRVRDZVRRRRRVRRRVRVRVRRRBYCRVRBYVRRRVRVRVRRRVRVRBYCRDZGYCRFXERRRVRRRVRRRFXERRRRRVRVRRR
+RRRBWRWERRWUWRRRWUWAWRRRWRWUWRWRWUWRRRWFWRWRRBWRRRWRWRWRRRWRWRWFWRWAWBWRWGWRWUWRRRWUWRWGWRWUWRWRWRRR
+RRRRRRBYCRRRRRRRRRRRRRRRRRRRRRVRRRVRRRVZARRRRRRRRRRRRRRRRRRRRRVZARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+RRWUWRRBWRRURRRRRRRRRRRRRRWRRRWUWUWRRRWARRRRRRRRRRRRRRRRRRRRRRWARRRRRRRRRRRRRRRRRRRRRRWRWRWUWRRRRRRR
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQWUWQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQVQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+WCQQWQQDWQQQQQQQWQWQWQWQQQQQQQWUWUWUWQQQQQQQWQQQWQQQQDWHWUWQWQWQWQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+BYCQVQDZVQQQQQQQVQVQQQVQQQQQQQVQVQVQVQQQQQQQQQQQQQQQDZVXEQQQQQVQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+WUWUWQWIWQWQQQQQWUWUWUWQWCQQQDWDWUWQWQWCQQQQWQWQWQQQWIWMWUWQQUWQWQWUWQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QQBYVQDZAQVQQQQQQQVQQQQQVYCQDZVZVQVQVQBYCQQQVQQQVQQQDZIZAQQQQQQQVQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QQQBWQWEQQWUWQWUWUWQWQQQWFWQWAWAWQWQWQWFWQWUWUQUWUWQWEWIWUWQWUWUWQWUWQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QQQQQQBYCQQQQQQQQQQQQQQQDZAQQQQQQQQQQQVZAQDZAQQQDZAQBYHZAQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QQWUWQQBWQQUQQQQQQQQQQQQWAWQQQQQQQQQQQWAQQWAQQQQWAQQQBWAQQQQQUQUQQWUWQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+</code></pre></font><p>위 텍스트를 노트패드에 붙여넣기 하면된다.</p>
+<a class="reference internal image-reference" href="../_images/notepad.png"><img alt="../_images/notepad.png" src="../_images/notepad.png" style="width: 600px;" /></a>
+<p>브라우저에서는 약간의 그림자 효과도 줄 수 있다.</p>
+<a class="reference internal image-reference" href="../_images/wf.png"><img alt="../_images/wf.png" src="../_images/wf.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/wf.html" download=""><code class="xref download docutils literal"><span class="pre">HTML</span> <span class="pre">다운로드</span></code></a>.</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>2차원 바코드 형식<a class="headerlink" href="#id6" title="제목 주소">¶</a></h2>
+<p>가장 최근에 만들어진 형식이다. 빈글 문자는 자동인식에 유리하지만 일반적인 실사 이미지에서 빈글문자를 구분하고 추출해내는 데는 복잡한 과정이 필요하다. 빈글 바코드라고도 불리우는 이 형식은 어두운 색으로 채워진 직사각형 박스에 빈글문자를 밝게 처리하여 자동인식에 더욱 유리하게 만든 것이다. 더우기 빈글 외의 데이타를 추가할 수 있어서 기존의 바코드나 Qr 코드 같은 역할도 할 수 있다. qB 와 qCB 두 가지 방식이 있다.( 아직 진행 중에 있기 때문에 차후 변경될 수 있음 )</p>
+<a class="reference internal image-reference" href="../_images/qcb01-.png"><img alt="../_images/qcb01-.png" src="../_images/qcb01-.png" style="width: 600px;" /></a>
+<p>qCB코드(quick Checked Binkeul)는 밝은 색 4개와 어두운 색 4개를 사용한 이미지인데 밝은 색으로 빈글을 표현하고 색상값의 변화로 추가적인 데이타를 넣을 수 있다.</p>
+<a class="reference internal image-reference" href="../_images/qb01-.png"><img alt="../_images/qb01-.png" src="../_images/qb01-.png" style="width: 600px;" /></a>
+<p>qB코드(quick Binkeul)는 흑백의 이미지 이며 빈글이 쓰여지고 남은 박스의 빈 여백을 이용해서 데이타를 추가할 수 있다. 두 형식 모두 약간의 이미지 손상으로 부터 데이타를 복원할 수 있다. 또한 박스의 가로와 세로 비율을 달리해서 만들 수 있다.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="이전 장">Welcome to binkeul user doc's documentation!</a></li>
+      <li>Next: <a href="빈글폰트.html" title="다음 장">빈글 폰트</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="바로 가기" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, budl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/doc/표현형식.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

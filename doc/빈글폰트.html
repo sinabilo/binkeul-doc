@@ -1,0 +1,258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>빈글 폰트 &#8212; binkeul user doc 0.8 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="큐비코드(Qb-Code, 빈글 매트릭스)" href="칼라빈글코드.html" />
+    <link rel="prev" title="빈글의 다양한 표현" href="표현형식.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>빈글 폰트<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<p>빈글 폰트는 문자를 여러 조각으로 쪼개서 여러개의 문자코드가 결합되어 빈글 한 문자를 형성하도록 만든 폰트이다. ASCII ART 방식으로 빈글문자를 표현한 것이다. 따라서 각 문자에 대한 폰트를 따로 만들 필요가 없는 조합방식의 폰트는 문자코드를 필요에 따라 만들어서 사용하는 빈글에 적합하다. 텍스트 에디터 보다 HTML 에서 사용하는 것이 적합하다.</p>
+<img alt="../_images/빈글폰트.png" src="../_images/빈글폰트.png" />
+<ul>
+<li><p class="first">HTML 에서 특수문자로 쓰이는 문자를 제외한 ASCII 영역의 알파벳과 기호, 숫자를 사용한다.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">&amp;</span></code> , <code class="docutils literal"><span class="pre">#</span></code> , <code class="docutils literal"><span class="pre">;</span></code> , <code class="docutils literal"><span class="pre">&lt;</span></code> , <code class="docutils literal"><span class="pre">&gt;</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">룩앤필형식 코드 : 다음 6 개의 문자로 모두 표현 가능 (사선획의 이음부가 거칠게 보일 수 있음)</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">/\*</span> <span class="pre">+-|</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">노트패드용 문자</p>
+<blockquote>
+<div><ul class="simple">
+<li>삼각조각 <code class="docutils literal"><span class="pre">ABCDEFGHIJKLMNO</span></code> (반전 소문자)</li>
+<li>점획 <code class="docutils literal"><span class="pre">W</span></code> (반전 소문자)</li>
+<li>직선획 <code class="docutils literal"><span class="pre">UV</span></code> (반전 소문자)</li>
+<li>사선획 <code class="docutils literal"><span class="pre">YZ</span></code> 겹친사선 <code class="docutils literal"><span class="pre">X</span></code> (반전 소문자)</li>
+<li>사각조각 <code class="docutils literal"><span class="pre">0123456789]$%[`&#64;</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">공백</p>
+<blockquote>
+<div><ul class="simple">
+<li>문자여백[0] <code class="docutils literal"><span class="pre">Qq</span></code></li>
+<li>문자여백[0] <code class="docutils literal"><span class="pre">Rr</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">FFC 코드 전용</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">Pp</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="html">
+<h1>HTML 문서에 웹폰트 적용<a class="headerlink" href="#html" title="제목 주소">¶</a></h1>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;binkeulw&#39;</span> <span class="o">;</span>
+    <span class="nt">src</span> <span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="nt">data</span><span class="p">:</span><span class="nd">font</span><span class="o">/</span><span class="nt">woff</span><span class="o">;</span><span class="nt">base64</span><span class="o">,</span><span class="nt">d09GRgABAAAAAA</span><span class="o">/</span><span class="nt">EABEAAAAAJDgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAPoAAAABwAAAAchOW0r0dERUYAAA</span><span class="o">+</span><span class="nt">EAAAAHAAAAB4AJwB4T1MvMgAAAfQAAABNAAAAYGsOmn9jbWFwAAACtAAAAOYAAAGi6Oj86GN2dCAAAAXAAAAAFAAAABQJERHdZnBnbQAAA5wAAAGxAAACZVO0L6dnYXNwAAAPfAAAAAgAAAAIAAAAEGdseWYAAAasAAAGOAAAFjANNsJfaGVhZAAAAYAAAAA0AAAANhf0Zb5oaGVhAAABtAAAAB4AAAAkEtAAsmhtdHgAAAJEAAAAbwAAAchEpQ5MbG9jYQAABdQAAADXAAAA5nwzdkRtYXhwAAAB1AAAACAAAAAgAY4AVW5hbWUAAAzkAAABiQAAAsRPVQh6cG9zdAAADnAAAAEKAAABsCMjKs1wcmVwAAAFUAAAAG8AAAB</span><span class="o">+</span><span class="nt">OiHYG3dlYmYAAA</span><span class="o">+</span><span class="nt">8AAAABgAAAAbPuFw9eNpjYGRgYADipS</span><span class="o">/</span><span class="nt">7tOL5bb4yyHMwgMCN2Nl7wXRyg</span><span class="o">/</span><span class="nt">nvWb8YeNK4zgK5HAxMIFEAWWYMcHjaY2BkYOA6</span><span class="o">+/</span><span class="nt">MGiPw96</span><span class="o">/</span><span class="nt">csnjQGoAgKKAIAtaAHkAAAAAEAAAByABAABAAAAAAAAgABAAIAFgAAAQAAQQAAAAB42mNgYS9knMDAysDCasw6g4GBUR5CM19lSGESYGBgYmDlZIABRgYkEJDmmsLQwMCr</span><span class="o">+</span><span class="nt">oct7V8aAwPXWTYNmBpmBWYFIKXAwAgA</span><span class="o">/</span><span class="nt">gEKigAAAHjaY3rD4MIABBx4MbMxB8P</span><span class="o">/</span><span class="nt">WRwMv2dB</span><span class="o">+</span><span class="nt">eYQPrIYCwN2mhAmVx8yBrkD5EZ8amDu</span><span class="o">/</span><span class="nt">G8MwQwMA4Nhdv</span><span class="o">+</span><span class="nt">fxZrGwMB1loEBRjPPZGBg2szAwHgGiiOBfE2g4pkwP0Iws8n</span><span class="o">/</span><span class="nt">WexADJIDqWcBKgEApO8lIwB42mNgYGBmgGAZBkYGEJgD5DGC</span><span class="o">+</span><span class="nt">SwMDWBaACjCw8DLoMSgymDFYMtQx7CAYa0Cl4KIgr5CvOqf</span><span class="o">//+</span><span class="nt">BqngZFBhUGNSBsvZgWQYFAZjs</span><span class="o">/</span><span class="nt">6</span><span class="o">//</span><span class="nt">H</span><span class="o">/</span><span class="nt">9</span><span class="o">/</span><span class="nt">9P</span><span class="o">/</span><span class="nt">h</span><span class="o">//</span><span class="nt">v</span><span class="o">/</span><span class="nt">7</span><span class="o">/</span><span class="nt">3f</span><span class="o">+</span><span class="nt">3</span><span class="o">/</span><span class="nt">jg</span><span class="o">/</span><span class="nt">gHUQ8cHgjeKoXaiBMwsjHAlTAyAQkmdAVAp7OwMrCxM3BwcnHz8PLxCwgKCYuIiolLSEpJg9wuKyevoKikrKKqpq6hqaWto6unb2BoZGxiamZuYWllbWNrZ</span><span class="o">+/</span><span class="nt">g6OTs4urm7uHp5e3j6</span><span class="o">+</span><span class="nt">cfEBgUHBIaFh4RGRUdw0A9EAsmc</span><span class="o">/</span><span class="nt">NI0wUA0NI1jwAAeNpdUbtOW0EQ3Q0PA4HE2CA52hSzmZDGe6EFCcTVjWJkO4XlCGk3cpGLcQEfQIFEDdqvGaChpEibBiEXSHxCPiESM2uIojQ7O7NzzpkzS8qRqnfpa89T5ySQwt0GzTb9Tki1swD3pOvrjYy0gwdabGb0ynX7</span><span class="o">/</span><span class="nt">gsGm9GUO2oA5T1vKQ8ZTTuBWrSn</span><span class="o">/</span><span class="nt">tH8Cob7</span><span class="o">/</span><span class="nt">B</span><span class="o">/</span><span class="nt">zOxi0NNP01DoJ6SEE5ptxS4PvGc26yw</span><span class="o">/</span><span class="nt">6gtXhYjAwpJim4i4</span><span class="o">/</span><span class="nt">plL</span><span class="o">+</span><span class="nt">tzTnasuwtZHRvIMzEfnJNEBTa20Emv7UIdXzcRRLkMumsTaYmLL</span><span class="o">+</span><span class="nt">JBPBhcl0VVO1zPjawV2ys</span><span class="o">+</span><span class="nt">hggyrNgQfYw1Z5DB4ODyYU0rckyiwNEfZiq8QIEZMcCjnl3Mn</span><span class="o">+</span><span class="nt">pED5SBLGvElKO</span><span class="o">+</span><span class="nt">OGtQbGkdfAoDZPs</span><span class="o">/</span><span class="nt">88m01tbx3C</span><span class="o">+</span><span class="nt">FkcwXe</span><span class="o">/</span><span class="nt">GUs6</span><span class="o">+</span><span class="nt">MiG2hgRYjtiKYAJREJGVfmGGs</span><span class="o">+</span><span class="nt">9LAbkUvvPQJSA5fGPf50ItO7YRDyXtXUOMVYIen7b3PLLirtWuc6LQndvqmqo0inN</span><span class="o">+</span><span class="nt">17OvscDnh4Lw0FjwZvP</span><span class="o">+/</span><span class="nt">5Kgfo8LK40aA4EQ3o3ev</span><span class="o">+</span><span class="nt">iteqIq7wXPrIn07</span><span class="o">+</span><span class="nt">xWgAAAHja28H4v3UDYy</span><span class="o">+</span><span class="nt">D9waOgIiNjIx9kRvd2LQjFDcIRHpvEAkCMhoiZTewacdEMGxgUnDdwKztsoFZwXUTEzuTNpjDouC6i4GZJZQBwmfcwApVxQZUxQpUtZHZrQzIZQepY63</span><span class="o">/</span><span class="nt">zwATidwgog0AgmkkOAACZgMzAZkDMwM0AzMBmgMzAEQFEXjaY2Bg0AFDM4YshjaGHQyPGD4wSjA6MFYxdjBuYNzH</span><span class="o">+</span><span class="nt">IzxB5MCkxdTDlMf0xamO0x</span><span class="o">/</span><span class="nt">mEWYPZhrmNcx72G</span><span class="o">+</span><span class="nt">xcLAIsOixWLBEsRSxjKD5QDLM1Y</span><span class="o">+</span><span class="nt">ViXWANYW1m2sT9iU2AzYrNhc2JLYmtgmsM1jW8O2i</span><span class="o">+</span><span class="nt">0M2z12DnYZdj</span><span class="o">/</span><span class="nt">2IvYW9j72eez72O</span><span class="o">+</span><span class="nt">x</span><span class="o">/+</span><span class="nt">OQ43DgSOJo4pjCsYzjBMcrTh5OPU4</span><span class="o">/</span><span class="nt">zgjONM4SzhmcJzgvcd7hfMb5gYuFS4crgSuPaxHXJq49XKdwwBtcz7i</span><span class="o">+</span><span class="nt">cDNxC4ChBAAbhj4uAHjatVjLbttGFL3zIoe2i5gBUsCbIILTFqiKKDbtJgaCPoD8Qv6goPtFRa1f6IZU</span><span class="o">/</span><span class="nt">RmarVf9AS26yiKGzaq9dx7kkJZsyUVsi6I5nPs49z3A4T0A</span><span class="o">/</span><span class="nt">0V9AAEpvKoZTN7NUqn</span><span class="o">/</span><span class="nt">Pq4T9de7meB4C7Wgx4oez9Ika97NGD0v8lH</span><span class="o">+</span><span class="nt">1Sgfvecvli</span><span class="o">/</span><span class="nt">Z78tf1YebP95LAwAMICndByB3XxxgWWp6piCD72GGz8a1kItZymBcsaJOxIJVO5MKrmqhFpXYrxM2rjO8lcf1LhvD66MDhgxzhh9RSNMYURDN25NmLvG</span><span class="o">+</span><span class="nt">8bw9Hw4vHJcZY</span><span class="o">/</span><span class="nt">GFVWJSy0BP29fjfQp</span><span class="o">+</span><span class="nt">9vvocikkaHmXRjKp2NWlUHZRsJ3xnz8JlY3rNBJUgrREG</span><span class="o">/</span><span class="nt">yFAY9jmMkg2yVYHpaobIlKQUQlDIgSOV5KuMZNA30BoaHba9COH</span><span class="o">+</span><span class="nt">IDuhQF8vsuwqKWfGGZIdQqWcwUECclWk6EMGGsiuZ8CapYnjdkRPbvlE2lSYyjZ0kBX6D6HhHu6HFF9HgnubD0SnHBkAC7ENMbY</span><span class="o">+</span><span class="nt">W7nd7AXrlj4Am8hJlA</span><span class="o">+</span><span class="nt">ardiftj1f6kznF3vSvyp3X65OzMypUhCJn</span><span class="o">/</span><span class="nt">xv0IcYm</span><span class="o">/</span><span class="nt">gHdlg9fbaYNPlkBXv3qOqxfyHFcvenghOxJLI5LOBRCvN2yqy6CfCPq1FifXRP0EDMzt8XrDfiMVEbVyee7wQsql4yXwlVLPP514f8M1IK91vFpfIIbeESyvO17gsUSjlITljRHTPpYK</span><span class="o">/</span><span class="nt">8lH</span><span class="o">+</span><span class="nt">Ef6780bIDT2jLS6k</span><span class="o">+</span><span class="nt">dYeU4hdr2</span><span class="o">+</span><span class="nt">G0rS1Luh</span><span class="o">/</span><span class="nt">6pV64LSEiGPZnSr</span><span class="o">/</span><span class="nt">w895qMkUPT2oQdI85vgswAbSLXsaLiw24oGa</span><span class="o">+</span><span class="nt">PV6</span><span class="o">+</span><span class="nt">bksLodrckjD0tEztXK80haLMok1wGjFveX9</span><span class="o">+</span><span class="nt">IeiaM7kH0MWHy</span><span class="o">+</span><span class="nt">HODT2</span><span class="o">+</span><span class="nt">HB4FHMpPCj91ZFF3Enh</span><span class="o">+</span><span class="nt">lIEUricnd8mTp9skD6gMdmx1h1ct3h00rmORIf</span><span class="o">+</span><span class="nt">Qg</span><span class="o">+</span><span class="nt">Tg</span><span class="o">+</span><span class="nt">5io</span><span class="o">+</span><span class="nt">tRTbzpEUNWI6UTZC</span><span class="o">+</span><span class="nt">FokrKj4caxDfrzWWo1QtfC2iMHQZmSoPZmXDpq4OYWY2g7w8YlGa2a5G2Zzes</span><span class="o">/</span><span class="nt">3mvpQ6X0p7ftlR6</span><span class="o">/</span><span class="nt">LBZrXSGSyOe9QNkzEBm5SNLUhd</span><span class="o">/</span><span class="nt">Dq9CfKl3RXHJR</span><span class="o">/</span><span class="nt">4XcvFU</span><span class="o">+</span><span class="nt">timbdxyDGzHcKMk61EMZMkY3uhlOkTJDLFjzM4bXW8uewwV3AQca9kEe1GAbwMTSuHBqcbh05vBeMIMRKo1xxYathQ5U8reWbBO2KRy0uI</span><span class="o">/</span><span class="nt">JC3urGgG8RUJMMCCJwKINY9ngdfDl498Gmi9a3zaRc2K</span><span class="o">+</span><span class="nt">3aKkwu0Yl2vZoe3GEctBC99zR83dcCo4pV2aTeWaWIBTrEZayPB3xI</span><span class="o">+</span><span class="nt">62nnRSzlHRa5wqBX4r8KjgLLpGzgQZB2SGf1xF6qEBk5qRnZs8nYBj5TQelXoPTq74nE</span><span class="o">+</span><span class="nt">UVGkiOGqStBkdspQ3kgPYu</span><span class="o">/</span><span class="nt">NBHqtop</span><span class="o">+</span><span class="nt">tyyHre9Sf3FarxWWGig2L391Io5YOUz6ittnyrgedRXdv1QW5eo</span><span class="o">+</span><span class="nt">8Euijof22K5Htf2pAJGUUT6LEg9lP10tVQUDFsvbT4VAA</span><span class="o">/</span><span class="nt">K</span><span class="o">/</span><span class="nt">xnXKKrIb0YOXerqHdKDd6iVY</span><span class="o">+</span><span class="nt">GdYPbhLGH15nF9tO3qpXKzxJ0Ov5slogGl10PaBht7yL25hI8nDSTmY4H9pLlvVmLSj0MQXfxkcCmdKFwOhoN4VnLu5Xyi</span><span class="o">+</span><span class="nt">GeqTVrgbADiWZGx4jRjp4cZO3zGjKEXTeMuDRjaOydc5vFCnw7qJJAIOzTaoPFNUn46mWuz3k</span><span class="o">+</span><span class="nt">9jtLZkGlvAN31h359Xe1UExphnYpsMA0O9suH9pMThcEPHsE</span><span class="o">/</span><span class="nt">Z31jb8Wf</span><span class="o">/</span><span class="nt">NS7aZBgW</span><span class="o">/</span><span class="nt">6Zd</span><span class="o">+</span><span class="nt">HV83BHg3y4u</span><span class="o">/</span><span class="nt">RoRL2BXEdDboZDaDy3j7WHY3YzOQIenSSPsMnDNB7ElAezRKBuJwdN4</span><span class="o">/</span><span class="nt">fJIYiGWN2n</span><span class="o">+</span><span class="nt">rScBzF6drknJrfLuf254rmTZtDs64kfG0JfT</span><span class="o">/</span><span class="nt">s1hJ7eni316bx16GL76HoD1esNdHyQJf3kkEUJzxUid4JFnK63qJcbPtu0h</span><span class="o">/</span><span class="nt">t8vaM</span><span class="o">/</span><span class="nt">68sIJyjqRPqiLruzPoUQqX2CptY0Zw3O</span><span class="o">+</span><span class="nt">qwlby1SjbHJw9wW4qSZe5sjcrb2dzYHbdaeN7Jw3ii688bkqoJje86Y7dccxVDtjNedN7q5jqwlTuT8Grrzxl59eVZgiTJUYLAe6blZ2</span><span class="o">+/</span><span class="nt">cey70WdbENFoLmdivpfFaFzgMop8j</span><span class="o">+</span><span class="nt">A</span><span class="o">/</span><span class="nt">mOz</span><span class="o">+</span><span class="nt">jeNp9kb9OwzAQxj</span><span class="o">+</span><span class="nt">35V8kEBurRyqRxMlGpwpQpTKCxMTSVpYbNcRV4oLgGXgVmBELK8</span><span class="o">/</span><span class="nt">CK7DwxRgES3Oy</span><span class="o">/</span><span class="nt">Lu7787OGcAeniHw</span><span class="o">/</span><span class="nt">V3jNbDAtugH7mBLnATuQorHwD1q3gJvYF98BN7EdmeXStHboffiq1oW1BwE7mBP5IG7GIrzwD1qngJv8Kz3wJuMf</span><span class="o">+</span><span class="nt">IUFkvco0YBgzkcJA4xQ597DoUMxzgiXzJXoCKdsaKiNsYYC</span><span class="o">/</span><span class="nt">oSEa2tdOzUYICU1lDtoLkn1FqaQUk</span><span class="o">/</span><span class="nt">YW</span><span class="o">+</span><span class="nt">Lmz</span><span class="o">+</span><span class="nt">KFFPfeUFeUZP6fm12Ss9iyNwEt8zWv9URcGqX93Vh5k4ezvoyV9nxkbycF5U8s5WJxwspo2ju3LIZpGlTON0kxlpT6mRmb3wgnRbVQq</span><span class="o">/</span><span class="nt">KNIqaYlraYTW51XWbZvf</span><span class="o">/</span><span class="nt">V7pj4FtMumDQ</span><span class="o">+</span><span class="nt">PCEN8KFNqtyQhj5uTi</span><span class="o">/</span><span class="nt">11RoTmbA9b</span><span class="o">/</span><span class="nt">VQ4hmtNivnyljZCs3srXRciDDcQ</span><span class="o">/</span><span class="nt">ELIuzuP2</span><span class="o">/</span><span class="nt">tbe68vNpp2b9Kylaznkpb5ICXTeFraRSeaKUkuu6fQF</span><span class="o">/</span><span class="nt">23y</span><span class="o">/</span><span class="nt">AAAAeNptzMdKA3EUxeHfTTe920Hs3ZlJJsUeE2PvvRvQFBCRSBa</span><span class="o">+</span><span class="nt">i0</span><span class="o">+</span><span class="nt">hr</span><span class="o">+</span><span class="nt">dCyfyXns3HuRcONtr5</span><span class="o">+</span><span class="nt">aTKf2mC2MSOHQdO3Hjw4sNPgCAhwkSIEiNOgiSddNFND7300c8AgwwxzAijjDHOBJNMMc0Ms8yhoWOQIo1Jhiw58syzwCJLLLPCKgXWKFJinTIbbLLFNjvsssc</span><span class="o">+</span><span class="nt">BxxyxDEnnHLGORdccsU1N9xyxz0PPFIRhzjFJW7xSId4xSd</span><span class="o">+</span><span class="nt">CUhQQhKWiEQlxhffEpeEJF21l4</span><span class="o">+</span><span class="nt">3uu5uvTY0TStZFjRluxt</span><span class="o">/</span><span class="nt">D6WuNJQpZVppKjPKrDKnzCsLlrra1XVvtVFrNZ</span><span class="o">+</span><span class="nt">fKu9162SULU1Ls1z8BchsRgYAAAABAAH</span><span class="o">//</span><span class="nt">wAPeNpjYGRgYOABYjEgZmJgBMJCIGYB8xgACHkAoAAAAAEAAAAA1CSYugAAAADYXZu9AAAAANhjgDcAAVw9z7cAAA</span><span class="o">==)</span>
+<span class="p">}</span>
+
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-shadow: 3px 2px 2px gray; transform: skew(-10deg);font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre&quot;</span><span class="p">&gt;</span>
+
+(SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS.
+T + + +         +-+ +                                 +     T
+T | | |         | | |                                /|     T
+T +-+-+   + +   +-+ + +   +-+ + +   +-+     + + +   + + +   T
+T | | |    /    | |   |   |\  |/       \   / / /|  /| | |   T
+T + +-+   + +   + +-+ +   + + +-+ +-+-+ + + + + + +-+-+ +   T
+T |      /|     |   |    /   /       /  | | |/| |    \ \ \  T
+T +-+-+   +-+-+ + + +-+ +   +       +   + + +-+-+     + + + T
+T                                   |                       T
+T                                   +                       T
+,SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS)
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-shadow: 3px 2px 2px gray; transform: skew(-10deg);font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre&quot;</span><span class="p">&gt;</span>
+
+
+ + + +   + +   +-+ +
+ | | |            \|
+ +-+-+ + + +-+ +-+ +
+   |       | |   |\
+   +   + +-+ +   + +
+  /|\    |  /   / *
+ + + +   + +   + + +
+
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-shadow: 3px 2px 2px gray; transform: skew(-10deg);font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre&quot;</span><span class="p">&gt;</span>
+
+
+{ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss:
+tqwqwqwqqqqqqqqqwuwqwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdwqqqqt
+tqvqvqvqqqqqqqqqvqvqvqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdzvqqqqt
+tqwuwuwqqqwdwqqqwuwqwqwqqqwuwqwdwqqqwuwcqqqdwdwdwqqdwawqwqqt
+tqvqvqvqqqdzaqqqvqvqqqvqqqvycqvzaqqqqqbycqdzizizvqdzvqvqvqqt
+tqwqwuwqqdwawqqqwqwuwqwqqdwbwdwuwqwuwuwbwqwawiwawqwuwuwcwcqt
+tqvqqqqqdzvqqqqqvqqqvqqqdzaqdzaqqqqqdzaqvqvqvzvqvqqqbyjyjyct
+tqwuwuwqwawuwuwqwqwqwuwqwaqqwaqqqqqqwaqqwqwqwuwuwqqqqbwbwbwt
+tqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqt
+tqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqwqqqqqqqqqqqqqqqqqqqqqqt
+!ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss}
+
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre&quot;</span><span class="p">&gt;</span>
+(SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS.
+TQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQT
+TQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQT
+TQWQWQWQQQWQWQQQWUWCWQWUWUWUWQQQQDWQWUWCQDWDWT
+TQVQVQVQQQQQQQQQQQBYVQQQVQVQVQQQDZVQVQBYHZIZAT
+TQWUWUWQWQWQWUWQWUWJWQQDWUWUWQWQWIWQWUWUWUWEQT
+TQQQVQQQQQQQVQVQQQVYCQDZVQQQQQVQDZAQQQBYCQBYCT
+TQQDWCQQWQWUWDWQQDWJWQWAWUWUWUWQWEQQQQWBWUWBWT
+TQDZVYCQQQVQDZAQDZGYCQQQDZAQVQVQBYCQQQQQQQQQQT
+TQWAWBWQQQWQWAQQWAQBWQQQWAQQWQWQQBWQQQQQQQQQQT
+,SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS)
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre&quot;</span><span class="p">&gt;</span>
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qwqwqwqqqwqwqqqwuwcwqwuwuwuwqqqqdwqwuwcqdwdw
+qvqvqvqqqqqqqqqqqbyvqqqvqvqvqqqdzvqvqbyhziza
+qwuwuwqwqwqwuwqwuwjwqqdwuwuwqwqwiwqwuwuwuweq
+qqqvqqqqqqqvqvqqqvycqdzvqqqqqvqdzaqqqbycqbyc
+qqdwcqqwqwuwdwqqdwjwqwawuwuwuwqweqqqqwbwuwbw
+qdzvycqqqvqdzaqdzgycqqqdzaqvqvqbycqqqqqqqqqq
+qwawbwqqqwqwaqqwaqbwqqqwaqqwqwqqbwqqqqqqqqqq
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">/&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display:inline-block;padding:0 0 0 0;border: black solid 5pt;font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre&quot;</span><span class="p">&gt;</span>qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+qwqwqwqqqwqwqqqwuwcwqwuwuwuwqqqqdwqwuwcqdwdw
+qvqvqvqqqqqqqqqqqbyvqqqvqvqvqqqdzvqvqbyhziza
+qwuwuwqwqwqwuwqwuwjwqqdwuwuwqwqwiwqwuwuwuweq
+qqqvqqqqqqqvqvqqqvycqdzvqqqqqvqdzaqqqbycqbyc
+qqdwcqqwqwuwdwqqdwjwqwawuwuwuwqweqqqqwbwuwbw
+qdzvycqqqvqdzaqdzgycqqqdzaqvqvqbycqqqqqqqqqq
+qwawbwqqqwqwaqqwaqbwqqqwaqqwqwqqbwqqqqqqqqqq<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>위 html 코드가 정상적으로 작동하면 브라우저에서 다음과 같이 나타난다.</p>
+<img alt="../_images/s01-sample.PNG" src="../_images/s01-sample.PNG" />
+</div>
+<div class="section" id="id2">
+<h1>노트패드에서 사용하기<a class="headerlink" href="#id2" title="제목 주소">¶</a></h1>
+<p>간편한 편집기인 윈도우의 노트패드에서 사용하려면 binkeulw.ttf 폰트파일을 설치해야 한다.</p>
+<ul class="simple">
+<li>알파벳으로 코드를 작성한다.</li>
+</ul>
+<img alt="../_images/bk-notepad-abc.PNG" src="../_images/bk-notepad-abc.PNG" />
+<ul class="simple">
+<li>binkeulw 폰트로 설정한다.</li>
+</ul>
+<img alt="../_images/bk-notepad-fontset.PNG" src="../_images/bk-notepad-fontset.PNG" />
+<ul class="simple">
+<li>노트패드에 빈글문자가 나타난다.</li>
+</ul>
+<img alt="../_images/bk-notepad.PNG" src="../_images/bk-notepad.PNG" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="표현형식.html" title="이전 장">빈글의 다양한 표현</a></li>
+      <li>Next: <a href="칼라빈글코드.html" title="다음 장">큐비코드(Qb-Code, 빈글 매트릭스)</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="바로 가기" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, budl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/doc/빈글폰트.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

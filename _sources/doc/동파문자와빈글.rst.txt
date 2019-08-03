@@ -1,0 +1,64 @@
+동파문자와 빈글
+===========================
+다음 동파문자 이미지는 책 [ 남이상자 - 남이섬에서 상형문자를 모르면 문맹자? ] 에서 캡쳐하였다. 
+
+
+    .. image:: /_static/동파문자와빈글/일어나다p80.PNG
+       :width: 500 
+       :height: 150
+       
+    .. image:: /_static/동파문자와빈글/일어나다.svg
+       :height: 100
+       
+    `일어나다`
+       
+    .. image:: /_static/동파문자와빈글/꿇어앉다p80.PNG
+       :width: 500 
+       :height: 150
+       
+    .. image:: /_static/동파문자와빈글/꿇어앉다.svg
+       :height: 100
+
+    `꿇어앉다`
+
+    .. image:: /_static/동파문자와빈글/귀신p80.PNG
+       :width: 500 
+       :height: 150
+
+    .. image:: /_static/동파문자와빈글/귀신.svg
+       :height: 100
+
+    `귀신`
+
+
+    .. image:: /_static/동파문자와빈글/입p68.PNG
+       :width: 500 
+       :height: 150
+
+    .. image:: /_static/동파문자와빈글/입.svg
+       :height: 100
+
+    `입`
+
+        
+    .. image:: /_static/동파문자와빈글/목p68.PNG
+       :width: 500 
+       :height: 150
+
+    .. image:: /_static/동파문자와빈글/목.svg
+       :height: 100
+
+    `목`
+    
+    
+     
+    .. image:: /_static/동파문자와빈글/뚱뚱하다p68.PNG
+       :width: 500 
+       :height: 150
+
+    .. image:: /_static/동파문자와빈글/뚱뚱하다.svg
+       :height: 100
+
+    `뚱뚱하다`
+    
+    

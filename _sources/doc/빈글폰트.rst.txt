@@ -1,0 +1,172 @@
+빈글 폰트 
+======================================================
+빈글 폰트는 문자를 여러 조각으로 쪼개서 여러개의 문자코드가 결합되어 빈글 한 문자를 형성하도록 만든 폰트이다. ASCII ART 방식으로 빈글문자를 표현한 것이다. 따라서 각 문자에 대한 폰트를 따로 만들 필요가 없는 조합방식의 폰트는 문자코드를 필요에 따라 만들어서 사용하는 빈글에 적합하다. 텍스트 에디터 보다 HTML 에서 사용하는 것이 적합하다.
+
+..  image:: /_static/빈글폰트/빈글폰트.png
+
+* HTML 에서 특수문자로 쓰이는 문자를 제외한 ASCII 영역의 알파벳과 기호, 숫자를 사용한다.
+
+    * ``&`` , ``#`` , ``;`` , ``<`` , ``>`` 
+        
+    
+* 룩앤필형식 코드 : 다음 6 개의 문자로 모두 표현 가능 (사선획의 이음부가 거칠게 보일 수 있음)
+
+    * ``/\* +-|``
+
+* 노트패드용 문자
+
+    * 삼각조각 ``ABCDEFGHIJKLMNO`` (반전 소문자)
+    * 점획 ``W`` (반전 소문자)
+    * 직선획 ``UV`` (반전 소문자)
+    * 사선획 ``YZ`` 겹친사선 ``X`` (반전 소문자)
+    * 사각조각 ``0123456789]$%[`@``
+
+* 공백 
+
+    * 문자여백[0] ``Qq``
+    * 문자여백[0] ``Rr``
+
+* FFC 코드 전용
+    
+    * ``Pp``
+        
+    
+    
+HTML 문서에 웹폰트 적용 
+==========================================================
+
+    
+.. code-block:: html
+   
+    <html>
+    <head>
+    </head>
+    <body>
+
+    <style>
+
+    @font-face {
+        font-family: 'binkeulw' ;
+        src : url(data:font/woff;base64,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)
+    }
+
+    </style>
+
+    <div style="text-shadow: 3px 2px 2px gray; transform: skew(-10deg);font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre">
+
+    (SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS.
+    T + + +         +-+ +                                 +     T
+    T | | |         | | |                                /|     T
+    T +-+-+   + +   +-+ + +   +-+ + +   +-+     + + +   + + +   T
+    T | | |    /    | |   |   |\  |/       \   / / /|  /| | |   T
+    T + +-+   + +   + +-+ +   + + +-+ +-+-+ + + + + + +-+-+ +   T
+    T |      /|     |   |    /   /       /  | | |/| |    \ \ \  T
+    T +-+-+   +-+-+ + + +-+ +   +       +   + + +-+-+     + + + T
+    T                                   |                       T
+    T                                   +                       T
+    ,SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS)                                   
+    </div>
+
+    <div style="text-shadow: 3px 2px 2px gray; transform: skew(-10deg);font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre">
+
+
+     + + +   + +   +-+ + 
+     | | |            \| 
+     +-+-+ + + +-+ +-+ + 
+       |       | |   |\  
+       +   + +-+ +   + + 
+      /|\    |  /   / *  
+     + + +   + +   + + + 
+
+    </div>
+
+    <div style="text-shadow: 3px 2px 2px gray; transform: skew(-10deg);font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre">
+
+
+    {ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss:
+    tqwqwqwqqqqqqqqqwuwqwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdwqqqqt
+    tqvqvqvqqqqqqqqqvqvqvqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdzvqqqqt
+    tqwuwuwqqqwdwqqqwuwqwqwqqqwuwqwdwqqqwuwcqqqdwdwdwqqdwawqwqqt
+    tqvqvqvqqqdzaqqqvqvqqqvqqqvycqvzaqqqqqbycqdzizizvqdzvqvqvqqt
+    tqwqwuwqqdwawqqqwqwuwqwqqdwbwdwuwqwuwuwbwqwawiwawqwuwuwcwcqt
+    tqvqqqqqdzvqqqqqvqqqvqqqdzaqdzaqqqqqdzaqvqvqvzvqvqqqbyjyjyct
+    tqwuwuwqwawuwuwqwqwqwuwqwaqqwaqqqqqqwaqqwqwqwuwuwqqqqbwbwbwt
+    tqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqt
+    tqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqwqqqqqqqqqqqqqqqqqqqqqqt
+    !ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss}
+
+    </div>
+
+    <div style="font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre">
+    (SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS.
+    TQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQT
+    TQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQT
+    TQWQWQWQQQWQWQQQWUWCWQWUWUWUWQQQQDWQWUWCQDWDWT
+    TQVQVQVQQQQQQQQQQQBYVQQQVQVQVQQQDZVQVQBYHZIZAT
+    TQWUWUWQWQWQWUWQWUWJWQQDWUWUWQWQWIWQWUWUWUWEQT
+    TQQQVQQQQQQQVQVQQQVYCQDZVQQQQQVQDZAQQQBYCQBYCT
+    TQQDWCQQWQWUWDWQQDWJWQWAWUWUWUWQWEQQQQWBWUWBWT
+    TQDZVYCQQQVQDZAQDZGYCQQQDZAQVQVQBYCQQQQQQQQQQT
+    TQWAWBWQQQWQWAQQWAQBWQQQWAQQWQWQQBWQQQQQQQQQQT
+    ,SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS)
+    </div>
+
+    <div style="font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre">
+    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    qwqwqwqqqwqwqqqwuwcwqwuwuwuwqqqqdwqwuwcqdwdw
+    qvqvqvqqqqqqqqqqqbyvqqqvqvqvqqqdzvqvqbyhziza
+    qwuwuwqwqwqwuwqwuwjwqqdwuwuwqwqwiwqwuwuwuweq
+    qqqvqqqqqqqvqvqqqvycqdzvqqqqqvqdzaqqqbycqbyc
+    qqdwcqqwqwuwdwqqdwjwqwawuwuwuwqweqqqqwbwuwbw
+    qdzvycqqqvqdzaqdzgycqqqdzaqvqvqbycqqqqqqqqqq
+    qwawbwqqqwqwaqqwaqbwqqqwaqqwqwqqbwqqqqqqqqqq
+    </div>
+    <p/>
+
+    <div style="display:inline-block;padding:0 0 0 0;border: black solid 5pt;font-family:binkeulw, monospace;font-size:6pt;line-height: 6pt; white-space:pre">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    qwqwqwqqqwqwqqqwuwcwqwuwuwuwqqqqdwqwuwcqdwdw
+    qvqvqvqqqqqqqqqqqbyvqqqvqvqvqqqdzvqvqbyhziza
+    qwuwuwqwqwqwuwqwuwjwqqdwuwuwqwqwiwqwuwuwuweq
+    qqqvqqqqqqqvqvqqqvycqdzvqqqqqvqdzaqqqbycqbyc
+    qqdwcqqwqwuwdwqqdwjwqwawuwuwuwqweqqqqwbwuwbw
+    qdzvycqqqvqdzaqdzgycqqqdzaqvqvqbycqqqqqqqqqq
+    qwawbwqqqwqwaqqwaqbwqqqwaqqwqwqqbwqqqqqqqqqq</div>
+
+
+    </body>
+    </html>
+
+
+    
+위 html 코드가 정상적으로 작동하면 브라우저에서 다음과 같이 나타난다.
+
+.. image:: /_static/빈글폰트/s01-sample.PNG
+
+
+
+노트패드에서 사용하기 
+==========================================================
+간편한 편집기인 윈도우의 노트패드에서 사용하려면 binkeulw.ttf 폰트파일을 설치해야 한다.
+
+* 알파벳으로 코드를 작성한다.
+
+.. image:: /_static/빈글폰트/bk-notepad-abc.PNG
+
+* binkeulw 폰트로 설정한다.
+
+.. image:: /_static/빈글폰트/bk-notepad-fontset.PNG
+
+* 노트패드에 빈글문자가 나타난다.
+
+.. image:: /_static/빈글폰트/bk-notepad.PNG
+
+
+
+
+
+
+
+
+ 
