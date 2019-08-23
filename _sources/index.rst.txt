@@ -15,6 +15,7 @@ Welcome to binkeul user doc's documentation!
    doc/칼라빈글코드
    doc/확장알파벳숫자
    doc/QCB코드와빈글
+   doc/빈룬
    
    doc/동파문자와빈글
    doc/제안사항20181221

@@ -34,6 +34,7 @@ ly20,oxm,imc20 = qbp.drawQcb(
     rsm=10,
     keul=kl,
     realco=True
+    # margin=3
 )
 
 imc20.show()

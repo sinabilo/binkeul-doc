@@ -1,0 +1,54 @@
+.. note:: 0.8.2
+    
+    빈룬문자는 지혁님이 제안한 문자로 빈글의 기본음소문자로 지정하기로 하였습니다.
+
+[0.8.2]
+
+
+===================================================
+빈룬( BinRune )
+===================================================
+
+자음과 모음
+====================
+
+:download:`download 빈룬 A </_static/빈룬/map_A-.html>`
+
+.. image:: /_static/빈룬/webview-A.png
+
+:download:`download 빈룬 B </_static/빈룬/map_B-.html>`
+
+.. image:: /_static/빈룬/webview-B.png
+
+
+
+:download:`download 빈룬 C </_static/빈룬/map_C-.html>`
+
+.. image:: /_static/빈룬/webview-C.png
+
+:download:`download 빈룬 D </_static/빈룬/map_D-.html>`
+
+.. image:: /_static/빈룬/webview-D.png
+
+
+
+문장 샘플 
+============================
+
+* 세계인권선언문 제 1조 (한국어)
+
+::
+
+    모든 사람은 태어날 때부터 자유롭고, 존엄과 권리에 있어서 동등하다. 
+    인간은 천부적으로 이성과 양심을 부여받았으며 서로 형제애의 정신으로 행동하여야 한다.
+
+
+.. image:: /_static/빈룬/brsam01-c.png
+
+* 세계인권선언문 제 1조 (영어)
+
+::
+
+    All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.
+    
+.. image:: /_static/빈룬/brsam02-c.png
