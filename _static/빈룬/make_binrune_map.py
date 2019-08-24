@@ -132,17 +132,17 @@ def make_map( pic, img, no ) :
           # r"map_A-.PNG", 
           # "A" )
           
-make_map( r"binrune\\20190814_233710.jpg", 
-          r"map_B-.PNG", 
-          "B" )
+# make_map( r"binrune\\20190814_233710.jpg", 
+          # r"map_B-.PNG", 
+          # "B" )
 
 # make_map( r"binrune\\20190814_233713.jpg", 
-# r"map_C-.PNG", 
-# # "C" )
+        # r"map_C-.PNG", 
+        # "C" )
 
-# make_map( r"binrune\\20190814_233718.jpg", 
-# r"map_D-.PNG", 
-# "D" )
+make_map( r"binrune\\20190814_233718.jpg", 
+        r"map_D-.PNG", 
+        "D" )
 
 '''
 img_A = r"map_A-.PNG"
