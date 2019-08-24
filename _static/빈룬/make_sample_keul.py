@@ -4,8 +4,8 @@ from pinkeul.cksetup.btagmap import Btag, BtagMap, BtagmBoxs, drawBtagmBox, hxs_
 
 # drawBtagmBox(20,20).save("brsam01-.png")
 
-# img_sam01 = "brsam01-.png"
-img_sam01 = "brsam02-.png"
+img_sam01 = "brsam01-.png"
+# img_sam01 = "brsam02-.png"
 
 sam01 = BtagmBoxs(img_sam01)[0,0]
 
