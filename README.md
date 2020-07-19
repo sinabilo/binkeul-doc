@@ -18,4 +18,6 @@
 
 ## r 
 
-* 투고 :   <https://docs.google.com/forms/d/e/1FAIpQLScD6TcTAgRWfpfDuxaVWKZer0H_PKOOtBr1nGMLYvX7upZLEQ/viewform>
+* 빈글 홈 :  <https://sites.google.com/site/binkeul>
+
+* 투고신청 :  <https://docs.google.com/forms/d/e/1FAIpQLScD6TcTAgRWfpfDuxaVWKZer0H_PKOOtBr1nGMLYvX7upZLEQ/viewform>
