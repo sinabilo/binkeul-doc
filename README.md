@@ -19,6 +19,8 @@
 
 * 빈글 홈 :  <https://sites.google.com/site/binkeul>
 
+* 문서 : <https://github.com/sinabilo/binkeul-doc/>
+
 ## m
 
 * 본 문서는 :말 (언어학 아마추어 학술지) 에 투고를 위해서 작성하는 논문이다.
