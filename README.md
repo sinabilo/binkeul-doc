@@ -1,7 +1,6 @@
 # binkeul-doc
 
-빈글 문서
-본 문서는 :말 (언어학 아마추어 학술지) 에 투고를 위해서 작성하는 논문이다.
+빈글(Binkeul) 은 
 
 
 
@@ -19,5 +18,9 @@
 ## r 
 
 * 빈글 홈 :  <https://sites.google.com/site/binkeul>
+
+## m
+
+* 본 문서는 :말 (언어학 아마추어 학술지) 에 투고를 위해서 작성하는 논문이다.
 
 * 투고신청 :  <https://docs.google.com/forms/d/e/1FAIpQLScD6TcTAgRWfpfDuxaVWKZer0H_PKOOtBr1nGMLYvX7upZLEQ/viewform>
