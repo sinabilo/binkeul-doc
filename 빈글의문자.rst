@@ -1,0 +1,16 @@
+빈글의 문자
+======================
+빈글에서 문자는 어떠한 요구조건을 충족하는 일정한 크기 흑백으로이루어진 시각적인 요소를 의미한다. 즉 9999
+
+.. image:: /_static/빈글의문자/wf02.png
+   :width: 80
+   
+
+.. raw:: html
+    :file: ./_static/빈글의문자/s01-.svg
+    
+00000
+
+.. raw:: html
+
+    <object data="./_static/빈글의문자/wf02.svg" type="image/svg+xml"></object>
