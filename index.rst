@@ -10,10 +10,8 @@ Welcome to 빈글과 세계's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   문자문화   
+   문자문화
    빈글의문자
-
-
 
 Indices and tables
 ==================

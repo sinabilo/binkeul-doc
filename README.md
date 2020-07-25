@@ -26,3 +26,5 @@
 * 본 문서는 :말 (언어학 아마추어 학술지) 에 투고를 위해서 작성하는 논문이다.
 
 * 투고신청 :  <https://docs.google.com/forms/d/e/1FAIpQLScD6TcTAgRWfpfDuxaVWKZer0H_PKOOtBr1nGMLYvX7upZLEQ/viewform>
+
+* 투고시기 : 2021-3-12 으로 조정  (2020-12-10 도 가능)
