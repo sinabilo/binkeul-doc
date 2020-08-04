@@ -22,8 +22,6 @@ RST sample
 
     This is the legend of the figure
 
-Reference to the figure :numref:`(Fig. %s) my-figure`
-
 :numref:`my-custom-label`
 
 .. list-table:: Frozen Delights!
@@ -63,7 +61,7 @@ i : int
 
 If [#a]_ is the first footnote reference, it will show up as
 "[1]".  We can refer to it again as [#b]_ and again see
-"[1]".  We can also refer to it as note_ (an ordinary internal
+"[1]".  We can also refer to it as (an ordinary internal
 hyperlink reference).
 
 [#c]_
@@ -74,12 +72,7 @@ hyperlink reference).
 
 .. [#b] This is the footnote labeled "note".
 
-.. [#c] ::
-
-    sdfsdfasas
-    dfsdf
-    sdfsdfasassdfds
-
+.. [#c]
 
 
 :Hello: This field has a short field name, so aligning the field
@@ -114,4 +107,3 @@ external hyperlinks (Python_), internal cross-references
 (example_), footnote references ([1]_), citation references
 ([CIT2002]_), substitution references (|example|), and _`inline
 internal targets`.
-
