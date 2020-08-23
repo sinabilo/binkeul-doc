@@ -107,3 +107,66 @@ external hyperlinks (Python_), internal cross-references
 (example_), footnote references ([1]_), citation references
 ([CIT2002]_), substitution references (|example|), and _`inline
 internal targets`.
+
+
+
+
+.. ::
+    
+    # dot -Tpng g02-.gv  -o g02-.png
+    
+    
+..  graphviz::
+    :align: center 
+            
+    Graph G 
+    {
+        layout=dot;
+        fontname="gulim.ttc" ; 
+        fontsize=9;
+        rankdir="TB";
+        node [shape=circle, fontname="gulim.ttc", fontsize=9];
+        edge [fontname="gulim.ttc", fontsize=9];
+        
+        subgraph clusterD {
+            margin=20;
+            label = "<단어>" ;
+            subgraph clusterA {
+                margin=20;
+                label = "<논리문자>" ;
+                
+                subgraph clusterB {
+                  margin=20;
+                  label = "<틀자>" ;
+                  a;
+                  b;
+                  c;
+                  
+                  subgraph clusterB {
+                    margin=20;
+                    label = "<조합자>" ;
+                    g;
+                    
+                  }
+                  
+                }
+                
+                subgraph clusterC {
+                  margin=20;
+                  label = "<무리자>" ;
+                  m -- n;
+                  o -- p -- q ;
+                }
+            }
+            
+            subgraph clusterE {
+              margin=20;
+              label = "<여러자>" ;
+              x ; 
+            }
+                
+        }
+    }
+
+
+

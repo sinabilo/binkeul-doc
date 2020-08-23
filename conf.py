@@ -30,7 +30,10 @@ release = '0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['docxbuilder' 
+extensions = [
+    'docxbuilder' ,
+    'sphinx.ext.graphviz',
+    'linuxdoc.rstFlatTable' 
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,6 +61,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','pdf']
 html_theme = 'alabaster'
 # html_theme = 'classic'
 
+numfig= True 
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -80,6 +84,4 @@ docx_documents = [
 ]
 docx_style = '_static/custom_style.docx'
 docx_pagebreak_before_section = 1
-
-
-numfig= True 
+docx_pagebreak_after_table_of_contents =1 
