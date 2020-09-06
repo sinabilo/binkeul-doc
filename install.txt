@@ -7,6 +7,9 @@
 * pip3 install docxbuilder
 
 
+* pip3 install git+http://github.com/return42/linuxdoc.git
+    https://pvbookmarks.readthedocs.io/en/master/documentation/doc_generators/sphinx/contributed_extensions/linux/linux.html#install-linux-doc
+
 확장(편집용)
 ==========================
 
@@ -31,7 +34,55 @@
     
     
 * pandoc 설치 ::
-        
+    * 변환
+        ``pandoc  -o idx.docx -f html -t docx index.html``
     
     
+    
+    
+    
+    
+    
+    
+flat-table 사용하기 
+==================================
+
+* https://pvbookmarks.readthedocs.io/en/master/documentation/doc_generators/sphinx/contributed_extensions/linux/linux.html#install-linux-doc
+
+* https://www.kernel.org/doc/html/v4.10/doc-guide/sphinx.html
+
+::
+
+    pip install git+http://github.com/return42/linuxdoc.git
+
+    extensions = [
+     ...
+    'linuxdoc.rstFlatTable'      
+    # Implementation of the 'flat-table' reST-directive.
+     ...
+     ]
+
+::
+
+    .. flat-table:: table title
+          :widths: 2 1 1 3
+
+          * - head col 1
+            - head col 2
+            - head col 3
+            - head col 4
+
+          * - column 1
+            - field 1.1
+            - field 1.2 with autospan
+
+          * - column 2
+            - field 2.1
+            - :rspan:`1` :cspan:`1` field 2.2 - 3.3
+
+          * .. _`last row`:
+
+            - column 3
+            
+          
 

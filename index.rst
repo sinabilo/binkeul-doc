@@ -3,7 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+=======================================
 Welcome to 빈글과 세계's documentation!
+=======================================
+
+`디지털 표어문자 "빈글"에 관하여`
 =======================================
 
 .. toctree::
@@ -12,7 +16,13 @@ Welcome to 빈글과 세계's documentation!
 
    문자문화
    빈글의문자
-   문자결합
+   문자확장
+   단어확장
+   
+   문장구조
+   연관문
+   2차원인식
+   
    rst-sample
 
 Indices and tables
